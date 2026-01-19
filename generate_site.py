@@ -1148,11 +1148,34 @@ def generate_quote_page(lang):
                     <!-- Form Column -->
                     <div class="quote-form-column">
                         <div class="form-container">
+                            <!-- Progress Bar -->
+                            <div class="form-progress">
+                                <div class="progress-step active" data-step="1">
+                                    <div class="progress-circle">1</div>
+                                    <span class="progress-label">{qp['form']['service_type'].split()[0]}</span>
+                                </div>
+                                <div class="progress-line"></div>
+                                <div class="progress-step" data-step="2">
+                                    <div class="progress-circle">2</div>
+                                    <span class="progress-label">{qp['form']['frequency'].split()[0]}</span>
+                                </div>
+                                <div class="progress-line"></div>
+                                <div class="progress-step" data-step="3">
+                                    <div class="progress-circle">3</div>
+                                    <span class="progress-label">{qp['form']['property_details'].split()[0]}</span>
+                                </div>
+                                <div class="progress-line"></div>
+                                <div class="progress-step" data-step="4">
+                                    <div class="progress-circle">4</div>
+                                    <span class="progress-label">{qp['form']['contact_details'].split()[0]}</span>
+                                </div>
+                            </div>
+
                             <form id="quote-form" action="{FORMSPREE_ENDPOINT}" method="POST">
                                 <input type="hidden" name="_language" value="{lang}">
 
                                 <!-- Step 1: Service Type -->
-                                <div class="form-section">
+                                <div class="form-section" data-section="1">
                                     <div class="form-step-header">
                                         <span class="form-step-number">1</span>
                                         <h3>{qp['form']['service_type']}</h3>
@@ -1161,29 +1184,39 @@ def generate_quote_page(lang):
                                         <label class="service-type-card">
                                             <input type="radio" name="service_category" value="residential" required>
                                             <div class="service-type-content">
-                                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                                <div class="service-type-icon">
+                                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                                </div>
                                                 <span class="service-type-title">{qp['form']['residential_label']}</span>
                                                 <span class="service-type-desc">{qp['form']['residential_desc']}</span>
+                                                <div class="service-type-check">
+                                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                                                </div>
                                             </div>
                                         </label>
                                         <label class="service-type-card">
                                             <input type="radio" name="service_category" value="school">
                                             <div class="service-type-content">
-                                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                                                <div class="service-type-icon">
+                                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                                                </div>
                                                 <span class="service-type-title">{qp['form']['school_label']}</span>
                                                 <span class="service-type-desc">{qp['form']['school_desc']}</span>
+                                                <div class="service-type-check">
+                                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                                                </div>
                                             </div>
                                         </label>
                                     </div>
 
-                                    <div class="form-group" style="margin-top: 1.25rem;">
+                                    <div class="form-group" style="margin-top: 1.5rem;">
                                         <label for="service_detail">{qp['form']['specific_service']}</label>
                                         <input type="text" id="service_detail" name="service_detail" placeholder="{qp['form']['service_placeholder']}">
                                     </div>
                                 </div>
 
                                 <!-- Step 2: Frequency -->
-                                <div class="form-section">
+                                <div class="form-section" data-section="2">
                                     <div class="form-step-header">
                                         <span class="form-step-number">2</span>
                                         <h3>{qp['form']['frequency']}</h3>
@@ -1191,69 +1224,99 @@ def generate_quote_page(lang):
                                     <div class="frequency-options">
                                         <label class="frequency-option">
                                             <input type="radio" name="frequency" value="one-time" required>
-                                            <span class="frequency-label">{qp['form']['freq_onetime']}</span>
+                                            <span class="frequency-label">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                                                {qp['form']['freq_onetime']}
+                                            </span>
                                         </label>
                                         <label class="frequency-option">
                                             <input type="radio" name="frequency" value="weekly">
-                                            <span class="frequency-label">{qp['form']['freq_weekly']}</span>
+                                            <span class="frequency-label">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                                {qp['form']['freq_weekly']}
+                                            </span>
                                         </label>
                                         <label class="frequency-option">
                                             <input type="radio" name="frequency" value="biweekly">
-                                            <span class="frequency-label">{qp['form']['freq_biweekly']}</span>
+                                            <span class="frequency-label">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
+                                                {qp['form']['freq_biweekly']}
+                                            </span>
                                         </label>
                                         <label class="frequency-option">
                                             <input type="radio" name="frequency" value="monthly">
-                                            <span class="frequency-label">{qp['form']['freq_monthly']}</span>
+                                            <span class="frequency-label">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                                {qp['form']['freq_monthly']}
+                                            </span>
                                         </label>
                                         <label class="frequency-option">
                                             <input type="radio" name="frequency" value="custom">
-                                            <span class="frequency-label">{qp['form']['freq_custom']}</span>
+                                            <span class="frequency-label">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                                                {qp['form']['freq_custom']}
+                                            </span>
                                         </label>
                                     </div>
                                 </div>
 
                                 <!-- Step 3: Property Details -->
-                                <div class="form-section">
+                                <div class="form-section" data-section="3">
                                     <div class="form-step-header">
                                         <span class="form-step-number">3</span>
                                         <h3>{qp['form']['property_details']}</h3>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group">
-                                            <label for="size">{qp['form']['property_size']}</label>
+                                            <label for="size">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                                                {qp['form']['property_size']}
+                                            </label>
                                             <input type="text" id="size" name="size" placeholder="{qp['form']['size_placeholder']}">
                                         </div>
                                         <div class="form-group">
-                                            <label for="address">{qp['form']['address']}</label>
+                                            <label for="address">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                                {qp['form']['address']}
+                                            </label>
                                             <input type="text" id="address" name="address" placeholder="{qp['form']['address_placeholder']}">
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Step 4: Contact Details -->
-                                <div class="form-section">
+                                <div class="form-section" data-section="4">
                                     <div class="form-step-header">
                                         <span class="form-step-number">4</span>
                                         <h3>{qp['form']['contact_details']}</h3>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group">
-                                            <label for="name">{qp['form']['name']}</label>
+                                            <label for="name">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                                {qp['form']['name']}
+                                            </label>
                                             <input type="text" id="name" name="name" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="phone">{qp['form']['phone']}</label>
+                                            <label for="phone">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                                {qp['form']['phone']}
+                                            </label>
                                             <input type="tel" id="phone" name="phone" placeholder="{qp['form']['phone_placeholder']}">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="email">{qp['form']['email']}</label>
+                                        <label for="email">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                            {qp['form']['email']}
+                                        </label>
                                         <input type="email" id="email" name="email" required>
                                     </div>
                                 </div>
 
                                 <!-- Additional Info -->
-                                <div class="form-section">
+                                <div class="form-section form-section-message">
                                     <h3 class="form-section-title">
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                                         {qp['form']['message']}
@@ -1263,12 +1326,17 @@ def generate_quote_page(lang):
                                     </div>
                                 </div>
 
-                                <p class="form-privacy">{qp['form']['privacy']}</p>
+                                <div class="form-footer">
+                                    <p class="form-privacy">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                        {qp['form']['privacy']}
+                                    </p>
 
-                                <button type="submit" class="btn btn-primary btn-lg btn-full">
-                                    <span>{qp['form']['submit']}</span>
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                                </button>
+                                    <button type="submit" class="btn btn-primary btn-lg btn-full">
+                                        <span>{qp['form']['submit']}</span>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                                    </button>
+                                </div>
                             </form>
 
                             <div id="form-success" class="form-message success" style="display: none;">
@@ -2458,10 +2526,71 @@ h4 { font-size: 1.125rem; }
 
 .quote-form-column .form-container {
     background: white;
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: var(--radius-lg);
     border: 1px solid var(--border);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Progress Bar */
+.form-progress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.progress-circle {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--bg-alt);
+    border: 2px solid var(--border);
+    color: var(--text-light);
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all var(--transition);
+}
+
+.progress-step.active .progress-circle,
+.progress-step.completed .progress-circle {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.progress-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.progress-step.active .progress-label {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.progress-line {
+    flex: 1;
+    height: 2px;
+    background: var(--border);
+    margin: 0 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .form-section {
@@ -2528,6 +2657,7 @@ h4 { font-size: 1.125rem; }
 
 .service-type-card {
     cursor: pointer;
+    position: relative;
 }
 
 .service-type-card input {
@@ -2541,34 +2671,88 @@ h4 { font-size: 1.125rem; }
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 1.5rem 1rem;
+    padding: 2rem 1.25rem;
     border: 2px solid var(--border);
-    border-radius: var(--radius);
+    border-radius: var(--radius-lg);
     background: white;
-    transition: all var(--transition);
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .service-type-card:hover .service-type-content {
     border-color: var(--primary);
     background: rgba(22, 163, 74, 0.02);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(22, 163, 74, 0.1);
 }
 
 .service-type-card input:checked + .service-type-content {
     border-color: var(--primary);
-    background: rgba(22, 163, 74, 0.05);
-    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+    background: linear-gradient(135deg, rgba(22, 163, 74, 0.08) 0%, rgba(22, 163, 74, 0.03) 100%);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15), 0 8px 25px rgba(22, 163, 74, 0.15);
 }
 
-.service-type-content svg {
+.service-type-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(22, 163, 74, 0.1);
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    transition: all 0.25s ease;
+}
+
+.service-type-card:hover .service-type-icon {
+    background: rgba(22, 163, 74, 0.15);
+    transform: scale(1.05);
+}
+
+.service-type-card input:checked + .service-type-content .service-type-icon {
+    background: var(--primary);
+}
+
+.service-type-card input:checked + .service-type-content .service-type-icon svg {
+    color: white;
+}
+
+.service-type-icon svg {
     color: var(--primary);
-    margin-bottom: 0.75rem;
+    transition: color 0.25s ease;
+}
+
+.service-type-check {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.25s ease;
+}
+
+.service-type-check svg {
+    color: white;
+}
+
+.service-type-card input:checked + .service-type-content .service-type-check {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .service-type-title {
     font-weight: 600;
     color: var(--text);
-    font-size: 1rem;
-    margin-bottom: 0.25rem;
+    font-size: 1.125rem;
+    margin-bottom: 0.375rem;
 }
 
 .service-type-desc {
@@ -2580,7 +2764,7 @@ h4 { font-size: 1.125rem; }
 .frequency-options {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.625rem;
+    gap: 0.75rem;
 }
 
 .frequency-option {
@@ -2594,25 +2778,42 @@ h4 { font-size: 1.125rem; }
 }
 
 .frequency-label {
-    display: inline-block;
-    padding: 0.625rem 1.125rem;
-    border: 1px solid var(--border);
-    border-radius: 100px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
     background: white;
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--text);
-    transition: all var(--transition);
+    transition: all 0.2s ease;
+}
+
+.frequency-label svg {
+    color: var(--text-light);
+    transition: color 0.2s ease;
 }
 
 .frequency-option:hover .frequency-label {
     border-color: var(--primary);
+    color: var(--primary);
+    background: rgba(22, 163, 74, 0.02);
+}
+
+.frequency-option:hover .frequency-label svg {
     color: var(--primary);
 }
 
 .frequency-option input:checked + .frequency-label {
     background: var(--primary);
     border-color: var(--primary);
+    color: white;
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25);
+}
+
+.frequency-option input:checked + .frequency-label svg {
     color: white;
 }
 
@@ -2623,28 +2824,40 @@ h4 { font-size: 1.125rem; }
 }
 
 .form-group {
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
 }
 
 .form-group label {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-weight: 500;
-    margin-bottom: 0.375rem;
+    margin-bottom: 0.5rem;
     color: var(--text);
     font-size: 0.875rem;
+}
+
+.form-group label svg {
+    color: var(--primary);
+    flex-shrink: 0;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
     width: 100%;
-    padding: 0.75rem 1rem;
+    padding: 0.875rem 1rem;
     font-size: 0.9375rem;
     font-family: inherit;
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     border-radius: var(--radius);
     background: white;
-    transition: border-color var(--transition), box-shadow var(--transition);
+    transition: all 0.2s ease;
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+    border-color: #d1d5db;
 }
 
 .form-group input:focus,
@@ -2653,6 +2866,7 @@ h4 { font-size: 1.125rem; }
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+    background: rgba(22, 163, 74, 0.01);
 }
 
 .form-group input::placeholder,
@@ -2662,13 +2876,32 @@ h4 { font-size: 1.125rem; }
 
 .form-group textarea {
     resize: vertical;
-    min-height: 100px;
+    min-height: 120px;
+}
+
+.form-section-message {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.form-footer {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
 }
 
 .form-privacy {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 0.8125rem;
     color: var(--text-light);
     margin-bottom: 1.25rem;
+}
+
+.form-privacy svg {
+    color: var(--primary);
+    flex-shrink: 0;
 }
 
 .btn-full {
@@ -2863,6 +3096,27 @@ h4 { font-size: 1.125rem; }
         padding: 1.5rem;
     }
 
+    .form-progress {
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .progress-label {
+        display: none;
+    }
+
+    .progress-circle {
+        width: 32px;
+        height: 32px;
+        font-size: 0.75rem;
+    }
+
+    .progress-line {
+        margin-bottom: 0;
+        min-width: 20px;
+    }
+
     .form-row {
         grid-template-columns: 1fr;
     }
@@ -2871,13 +3125,32 @@ h4 { font-size: 1.125rem; }
         grid-template-columns: 1fr;
     }
 
+    .service-type-content {
+        padding: 1.5rem 1rem;
+    }
+
+    .service-type-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .service-type-icon svg {
+        width: 32px;
+        height: 32px;
+    }
+
     .frequency-options {
         gap: 0.5rem;
     }
 
     .frequency-label {
-        padding: 0.5rem 0.875rem;
+        padding: 0.625rem 1rem;
         font-size: 0.8125rem;
+    }
+
+    .frequency-label svg {
+        width: 14px;
+        height: 14px;
     }
 
     .quote-info-column {
