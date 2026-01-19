@@ -1,0 +1,35 @@
+\contentsline {section}{\numberline {1}Executive Summary}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Innovation Breakthrough}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Competitive Positioning and IP Strategy}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Market Opportunity}{4}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Technical Innovation: Membrane Therapeutics Platform}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Definition of Therapeutic Phospholipids}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Scientific Rationale}{5}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}IBD Membrane Pathology: Quantitative Defects}{5}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Membrane Therapeutics Approach: Targeted Correction}{6}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.3}Platform Architecture}{6}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Plant EV Carrier System}{6}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Differentiation from LT-02 and PC Products}{7}{subsubsection.2.3.2}%
+\contentsline {section}{\numberline {3}Intellectual Property Strategy}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Patent Portfolio Architecture}{8}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Patent 1: Composition of Matter}{8}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Patent 2: Manufacturing Methods}{9}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Patent 3: Medical Use Claims}{9}{subsubsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.2}IP Landscape Positioning}{9}{subsection.3.2}%
+\contentsline {section}{\numberline {4}SBIR Phase I Research Proposal}{11}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Project Title}{11}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Project Summary}{11}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Specific Aims}{11}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Specific Aim 1: Develop and Characterize Therapeutic Glycerophospholipid-Enriched Plant EV Platform}{11}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Specific Aim 2: Demonstrate Membrane Integration and Therapeutic Activity}{12}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Specific Aim 3: Validate Therapeutic Efficacy in Preclinical IBD Models}{14}{subsubsection.4.3.3}%
+\contentsline {section}{\numberline {5}Commercial Viability and Market Analysis}{16}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Market Opportunity Assessment}{16}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Primary Target Market: IBD Therapeutics}{16}{subsubsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.2}Competitive Positioning}{16}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Current IBD Treatment Landscape}{16}{subsubsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.3}Regulatory and Commercialization Strategy}{17}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Conclusion and Strategic Vision}{18}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Innovation Summary}{18}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Long-term Vision and Impact}{18}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Next Steps and Immediate Actions}{19}{subsection.6.3}%

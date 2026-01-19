@@ -1,0 +1,139 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{times}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{bold-extra}
+\usepackage[parfill]{parskip}
+
+% Formatting
+\setlength{\parindent}{0pt}
+\setstretch{1.0}
+
+\begin{document}
+
+\pagestyle{empty}
+
+% Title and Header
+{\centering
+\textbf{\Large Dual-Cargo Plant Extracellular Vesicles for Safer Cyclosporine A Therapy in Severe Ulcerative Colitis}\\[0.3cm]
+}
+
+\noindent\textbf{Principal Investigator:} [Beatriz Name], PhD\\
+\textbf{Institution:} [Company Name / University]\\
+\textbf{Grant Mechanism:} NIH SBIR Phase I\\
+\textbf{Total Budget:} \$500,000 (12 months)
+
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
+
+% Background and Significance
+\noindent Acute severe ulcerative colitis (ASUC) affects $\sim$75,000 patients annually in the US and carries a 25--30\% risk of colectomy. Cyclosporine A (CsA), a calcineurin inhibitor, achieves 60--80\% response rates but causes dose-limiting nephrotoxicity in 20--40\% of patients. Current oral formulations lack gut specificity, resulting in high systemic exposure and therapeutic monitoring burden. Conversely, immunomodulatory nucleic acids (miRNAs, siRNAs, antisense oligonucleotides) can precisely target pathogenic immune pathways but suffer from poor oral bioavailability, rapid degradation, and off-target effects.
+
+Plant-derived extracellular vesicles (PDEVs) are emerging as biocompatible oral nanocarriers with natural GI stability and epithelial uptake. However, \textbf{no prior work has systematically engineered PDEVs to co-deliver small-molecule immunosuppressants with nucleic acid cargo}, creating ``programmable, bi-modal immunosuppressive particles.'' This dual-cargo approach enables synergistic targeting of complementary immune pathways (calcineurin + transcriptional/post-transcriptional regulation) while potentially reducing systemic CsA exposure.
+
+\textbf{Our central hypothesis:} Rationally designed dual-cargo PDEVs co-encapsulating CsA (membrane-associated) and immunomodulatory nucleic acids (luminal cargo) will achieve superior gut immunosuppression with $<$70\% systemic CsA exposure compared to conventional formulations, improving the therapeutic index in ASUC.
+
+% Specific Aims
+\vspace{0.2cm}
+\noindent\rule{\textwidth}{0.5pt}
+\vspace{0.1cm}
+
+\section*{SPECIFIC AIMS}
+
+\subsection*{AIM 1: Engineer and characterize dual-cargo plant EVs co-encapsulating CsA and immunomodulatory nucleic acids}
+
+We will isolate EVs from \textbf{citrus} and at least one additional edible plant source (grapefruit, ginger) using scalable differential centrifugation and size-exclusion chromatography. Using a \textbf{two-step loading process}, we will: (1) insert CsA into the lipid membrane via our novel ``Gentle Fusion'' protocol (temperature cycling + biocompatible co-solvent), and (2) introduce nucleic acid cargo (miRNA mimics, siRNA, or antisense oligonucleotides targeting IL-2, TNF-$\alpha$, or Th17 pathways) into the EV lumen via electroporation or lipid-mediated transfection. We will systematically vary CsA:nucleic acid ratios and quantify:
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt]
+    \item Particle size, polydispersity, zeta potential (NTA/DLS)
+    \item CsA encapsulation efficiency and loading capacity (LC-MS/MS)
+    \item Nucleic acid loading (qPCR, fluorescence assays)
+    \item Dual-cargo stability in simulated gastric/intestinal fluids (4h SGF, 6h SIF)
+    \item EV integrity markers (Western blot: CD63, TSG101; TEM morphology)
+\end{itemize}
+
+\textbf{Expected Outcome:} Lead dual-cargo formulation with $\geq$60\% CsA encapsulation, reproducible nucleic acid loading ($>$10$^4$ copies per $10^9$ EVs), and $\geq$90\% stability at 4°C for 28 days across $\geq$2 plant sources. \textbf{Go/No-Go (Month 4):} Achieve all metrics across 3 independent batches.
+
+\subsection*{AIM 2: Define immunologic activity and synergy of dual-cargo EVs in human cell models}
+
+We will assess whether dual-cargo EVs achieve \textbf{synergistic immunosuppression} at lower CsA doses through complementary mechanisms. Experiments will compare: (1) free CsA, (2) empty PDEVs, (3) CsA-PDEVs, (4) nucleic acid-PDEVs, and (5) \textbf{dual-cargo PDEVs} in:
+
+\textbf{Sub-aim 2a (T-cell suppression):} Human PBMCs activated with anti-CD3/CD28 beads. Endpoints: IL-2, IFN-$\gamma$ secretion (ELISA); T-cell proliferation (CFSE dilution); NFAT nuclear translocation; Treg marker expression (FOXP3, CD25). We will quantify synergy using Bliss independence and Loewe additivity models.
+
+\textbf{Sub-aim 2b (Epithelial barrier function):} TNF-$\alpha$-challenged Caco-2 monolayers. Endpoints: transepithelial electrical resistance (TEER); tight junction proteins (ZO-1, occludin, claudin-1); inflammatory mediators (IL-8, MCP-1).
+
+\textbf{Sub-aim 2c (Cellular uptake and cargo release):} Fluorescently labeled PDEVs (DiO membrane dye) and Cy5-tagged nucleic acids. Quantify uptake kinetics, intracellular localization (confocal microscopy), and functional nucleic acid delivery (target knockdown via qPCR/Western blot).
+
+\textbf{Expected Outcome:} $\geq$1 dual-cargo formulation achieves equal or greater T-cell suppression at $\leq$50\% of the CsA dose required with CsA-PDEVs alone, with demonstrated nucleic acid target engagement (e.g., $>$50\% reduction in IL-2 mRNA if using anti-IL-2 ASO). \textbf{Go/No-Go (Month 8):} Synergistic activity (combination index $<$0.8) in $\geq$2 assays.
+
+\subsection*{AIM 3: Demonstrate improved therapeutic index of dual-cargo EVs in a murine colitis model}
+
+We will evaluate oral administration of the lead dual-cargo formulation in DSS-induced colitis (C57BL/6 mice, n=10/group):
+
+\textbf{Groups:} (1) Vehicle, (2) Free CsA (10 mg/kg oral), (3) CsA-PDEVs (10 mg/kg CsA-equivalent), (4) Nucleic acid-PDEVs, (5) \textbf{Dual-cargo PDEVs (5 mg/kg CsA-equivalent + nucleic acid)}.
+
+\textbf{Efficacy endpoints:}
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt]
+    \item Daily disease activity index (weight, stool consistency, fecal blood)
+    \item Terminal: colon length, histology (blinded scoring), tissue cytokines (IL-1$\beta$, TNF-$\alpha$, IL-6)
+    \item Immune profiling: Flow cytometry of colonic lamina propria (CD4+ T-cell subsets, macrophage activation)
+\end{itemize}
+
+\textbf{Safety/PK endpoints:}
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt]
+    \item Plasma CsA concentration (2h, 6h post-dose; LC-MS/MS)
+    \item Tissue biodistribution (colon vs. kidney vs. liver; radiolabeled CsA)
+    \item Nephrotoxicity: Serum creatinine, BUN, kidney histology
+    \item Hepatotoxicity: ALT, AST
+\end{itemize}
+
+\textbf{Expected Outcome:} Dual-cargo PDEVs achieve $\geq$30\% disease activity reduction vs. vehicle (non-inferior to free CsA) \textbf{at half the systemic CsA exposure} (AUC $<$70\% of free CsA), with $\geq$2-fold higher colonic CsA concentration and no increase in renal/hepatic toxicity. \textbf{Go/No-Go (Month 12):} Meet all three criteria (efficacy, reduced exposure, no added toxicity).
+
+% Impact and Innovation
+\vspace{0.2cm}
+\noindent\rule{\textwidth}{0.5pt}
+\vspace{0.1cm}
+
+\section*{IMPACT \& INNOVATION}
+
+\textbf{Innovation:} This is the \textbf{first systematic engineering approach} to create ``programmable immunosuppressive nanoparticles'' by co-delivering small molecules and nucleic acids within edible plant EVs. Key innovations:
+
+\begin{enumerate}[leftmargin=*, topsep=0pt, itemsep=2pt]
+    \item \textbf{Dual-cargo architecture:} Hydrophobic drug in membrane + nucleic acid in lumen, enabling complementary pathway targeting (calcineurin inhibition + transcriptional/post-transcriptional modulation).
+    \item \textbf{Synergistic dosing:} Rational design of drug:nucleic acid ratios to achieve equivalent efficacy at reduced systemic exposure.
+    \item \textbf{Platform scalability:} Natural, food-grade carrier (\$0.10--0.50/dose from juice waste) with GRAS (Generally Recognized As Safe) regulatory pathway.
+\end{enumerate}
+
+\textbf{Significance:} Success will yield a lead formulation and comprehensive preclinical dataset supporting Phase II IND-enabling studies. Beyond ASUC, this modular platform can encapsulate other hydrophobic immunosuppressants (tacrolimus, sirolimus) paired with disease-specific nucleic acids, addressing a \$2B+ global market currently inaccessible due to dose-limiting toxicities. Our approach establishes PDEVs as viable alternatives to synthetic nanocarriers, with advantages in biocompatibility, cost, and regulatory precedent.
+
+\textbf{Commercialization Strategy:} Phase I delivers formulation SOPs, efficacy/safety data, and patent protection (provisional filed Month 1; full utility by Month 12). Phase II (Years 2--3) will complete GLP toxicology and CMC for IND filing, targeting Phase IIa clinical trial in ASUC patients by Year 4. We have identified three potential pharma partners (Takeda, AbbVie, Ferring) interested in oral IBD therapies.
+
+% Milestones
+\vspace{0.2cm}
+\noindent\rule{\textwidth}{0.5pt}
+\vspace{0.1cm}
+
+\section*{GO/NO-GO MILESTONES}
+
+\textbf{Month 4:} Lead dual-cargo formulation achieves $\geq$60\% CsA EE, reproducible nucleic acid loading, and $\geq$90\% 4-week stability.
+
+\textbf{Month 8:} In vitro synergy confirmed (combination index $<$0.8 in $\geq$2 assays; target engagement demonstrated).
+
+\textbf{Month 12:} In vivo efficacy: $\geq$30\% disease reduction with $<$70\% systemic CsA exposure vs. free CsA; no added toxicity.
+
+\textbf{Decision:} Meeting all milestones $\rightarrow$ Phase II SBIR application (GLP tox, scale-up, IND preparation). Partial success $\rightarrow$ Optimize formulation and resubmit. Failure $\rightarrow$ Pivot to single-cargo platform or alternative nucleic acid targets.
+
+\vspace{0.3cm}
+\hrule
+\vspace{0.2cm}
+
+\noindent\textbf{Principal Investigator:} [Bea's Name], PhD -- Expert in extracellular vesicles, drug delivery, and IBD therapeutics (see Biosketch).\\
+\textbf{Consultants:} [Clinical GI expert], MD (ASUC translation); [Pharma formulation expert], PhD (CMC/regulatory).
+
+\end{document}

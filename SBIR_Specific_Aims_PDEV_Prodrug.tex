@@ -1,0 +1,156 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{times}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{bold-extra}
+\usepackage[parfill]{parskip}
+
+% Formatting
+\setlength{\parindent}{0pt}
+\setstretch{1.0}
+
+\begin{document}
+
+\pagestyle{empty}
+
+% Title and Header
+{\centering
+\textbf{\Large Plant Extracellular Vesicle-Integrated CsA-Phospholipid Prodrug Platform for PLA2-Activated Therapy in Inflammatory Bowel Disease}\\[0.3cm]
+}
+
+\noindent\textbf{Principal Investigator:} Maria Beatriz Herrera Sanchez, PhD\\
+\textbf{Institution:} ExoVitae Lab / [University/Company Name]\\
+\textbf{Grant Mechanism:} NIH SBIR Phase I (NIDDK)\\
+\textbf{Total Budget:} \$500,000 (12 months)
+
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
+
+% Background and Significance
+\noindent\textbf{Overview and Significance.} Cyclosporine A (CsA) is an effective rescue therapy for steroid-refractory ulcerative colitis, achieving 60--80\% response rates in acute severe cases. However, clinical use is constrained by dose-limiting nephrotoxicity (20--40\% of patients), neurotoxicity, narrow therapeutic window, and high inter-individual pharmacokinetic variability. Current oral CsA formulations (microemulsions) lack gut-specific targeting, resulting in systemic exposure that drives toxicity while failing to maximize local mucosal immunosuppression.
+
+CsA-phospholipid prodrugs with phospholipase A2 (PLA2)-cleavable sn-2 ester bonds have demonstrated inflammation-triggered activation in preclinical IBD models. However, these prodrugs still require oral delivery vehicles for: (i) GI protection through acidic stomach pH and proteolytic enzymes, (ii) preferential accumulation in inflamed tissue, and (iii) sustained drug residence time. Plant-derived extracellular vesicles (PDEVs) are naturally occurring nanocarriers (100--300 nm) that survive GI transit, cross intestinal barriers, and exhibit intrinsic anti-inflammatory properties---but have not been used to deliver enzyme-activated prodrugs.
+
+\textbf{Central Hypothesis.} \textbf{Integrating CsA-phospholipid prodrugs directly into plant EV membranes} will enable dual-level control: (i) PDEV-mediated GI protection and preferential accumulation in inflamed intestinal tissue, and (ii) selective PLA2-triggered CsA release at disease sites where secreted PLA2 is elevated 10--100-fold. This combination will result in \textbf{superior therapeutic index} (efficacy with $<$50\% systemic exposure) compared to conventional formulations or free prodrugs.
+
+\textbf{Objective.} To establish the feasibility, mechanism of action, and therapeutic potential of \textbf{PDEV-integrated CsA-phospholipid prodrugs} as a next-generation rescue therapy for inflammatory bowel disease (IBD).
+
+% Specific Aims
+\vspace{0.2cm}
+\noindent\rule{\textwidth}{0.5pt}
+\vspace{0.1cm}
+
+\section*{SPECIFIC AIMS}
+
+\subsection*{AIM 1: Synthesize CsA-phospholipid prodrugs and develop methods for integration into plant-derived extracellular vesicles}
+
+We will synthesize or procure CsA-phospholipid prodrugs with PLA2-cleavable sn-2 ester bonds, using validated designs from prior colon-targeted drug delivery literature (e.g., 1-palmitoyl-2-(CsA-succinyl)-sn-glycero-3-phosphocholine or similar structures). We will optimize linker length, fatty acid chain composition, and CsA conjugation chemistry to achieve: (a) efficient PLA2 cleavage kinetics, (b) membrane insertion stability, and (c) retained immunosuppressive activity post-activation.
+
+In parallel, we will isolate PDEVs from citrus juice (\textit{Citrus sinensis}, \textit{Citrus paradisi}) and characterize particle size, zeta potential, lipid/protein composition, and EV markers (CD63, TSG101). We will then develop protocols for incorporating CsA-phospholipid prodrugs into PDEV membranes via:
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt]
+    \item Co-incubation methods (37°C, 30--60 min) with varying prodrug:PDEV ratios
+    \item Post-insertion purification (size-exclusion chromatography or ultracentrifugation)
+    \item Quantification of prodrug incorporation (LC-MS analysis of PDEV lipid extracts)
+    \item Assessment of structural integrity (TEM, DLS, zeta potential)
+    \item Stability testing in simulated gastric fluid (SGF, pH 1.2, 2h) and simulated intestinal fluid (SIF, pH 6.8, 6h)
+\end{itemize}
+
+\textbf{Expected Outcome:} Reproducible PDEV-prodrug formulations with $\geq$10\% prodrug incorporation (mol\% of total PDEV lipids), preserved EV integrity (confirmed by TEM and marker retention), and $\geq$80\% stability in GI-relevant conditions. \textbf{Go/No-Go (Month 4):} Achieve all metrics across 3 independent batches with $\geq$2 prodrug variants.
+
+\subsection*{AIM 2: Demonstrate PLA2-triggered CsA release and validate cellular immunosuppressive activity}
+
+We will quantify enzyme-responsive activation by exposing PDEV-integrated prodrugs to: (i) recombinant secreted PLA2 (sPLA2-IIA, 0.1--10 $\mu$g/mL), (ii) colon tissue homogenates from DSS-colitis mice (elevated PLA2 activity), and (iii) control conditions (PBS, heat-inactivated PLA2). Free CsA release will be quantified by HPLC or LC-MS/MS at 0, 1, 3, 6, 24 hours. Target: $\geq$3-fold increase in CsA release with active PLA2 vs. controls.
+
+\textbf{Sub-aim 2a (Cellular uptake and barrier function):}
+Compare PDEV-prodrug formulations vs. free CsA and free prodrug in:
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt]
+    \item Human intestinal epithelial cells (Caco-2): uptake kinetics (fluorescence microscopy), transepithelial electrical resistance (TEER), tight junction proteins (ZO-1, occludin)
+    \item Hypothesis: PDEV-prodrug enhances uptake and preserves barrier function vs. free drug
+\end{itemize}
+
+\textbf{Sub-aim 2b (Immunosuppressive activity):}
+Test in human T cells (PBMCs activated with anti-CD3/CD28):
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt]
+    \item IL-2 secretion (ELISA) with/without exogenous PLA2
+    \item NFAT nuclear translocation (immunofluorescence)
+    \item Proliferation assay (CFSE dilution)
+    \item Hypothesis: PDEV-prodrug achieves equivalent suppression at $\leq$50\% CsA dose vs. free CsA \textbf{when PLA2 is present}
+\end{itemize}
+
+\textbf{Expected Outcome:} PLA2 activity selectively triggers CsA release ($\geq$3-fold increase); PDEV-prodrug formulations show superior or equivalent immunosuppression vs. free CsA at reduced dose in presence of PLA2. \textbf{Go/No-Go (Month 8):} Enzyme-triggered release confirmed; IC$_{50}$ for IL-2 suppression $\leq$50\% of free CsA (with PLA2 activation).
+
+\subsection*{AIM 3: Validate dual-level targeting and therapeutic index in a murine colitis model}
+
+We will evaluate oral administration in DSS-induced colitis (C57BL/6 mice, n=10/group):
+
+\textbf{Groups:} (1) Vehicle, (2) Free CsA (10 mg/kg), (3) Free CsA-phospholipid prodrug (10 mg/kg CsA-equivalent), (4) Empty PDEVs, (5) \textbf{PDEV-integrated CsA-prodrug} (target: 5 mg/kg CsA-equivalent).
+
+\textbf{Efficacy endpoints:}
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt]
+    \item Daily disease activity index (DAI): weight loss, stool consistency, fecal blood
+    \item Terminal (Day 8): colon length, histology score (blinded pathologist), tissue cytokines (IL-1$\beta$, TNF-$\alpha$, IL-6)
+    \item Immune profiling: Flow cytometry of lamina propria (CD4$^+$ T-cell subsets, macrophage phenotypes)
+\end{itemize}
+
+\textbf{Pharmacokinetics and safety:}
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt]
+    \item Plasma CsA concentration (2h, 6h post-dose; LC-MS/MS); calculate AUC$_{0-24h}$
+    \item Biodistribution: Fluorescently labeled PDEVs; tissue CsA levels (colon, kidney, liver, spleen)
+    \item Nephrotoxicity: Serum creatinine, blood urea nitrogen (BUN), kidney histology (tubular damage score)
+    \item Hepatotoxicity: Alanine aminotransferase (ALT), aspartate aminotransferase (AST)
+    \item PLA2 activity assay: Confirm elevated sPLA2 in inflamed colon tissue vs. healthy controls
+\end{itemize}
+
+\textbf{Expected Outcome:} PDEV-integrated CsA-prodrug achieves: (i) $\geq$40\% reduction in DAI vs. vehicle (non-inferior to free CsA at 10 mg/kg), (ii) plasma CsA AUC $<$50\% of free CsA, (iii) $\geq$3-fold higher colonic CsA concentration vs. free CsA, and (iv) no significant increase in serum creatinine or kidney histopathology vs. vehicle. \textbf{Go/No-Go (Month 12):} Meet efficacy + safety criteria; demonstrate PLA2-dependent activation advantage over free prodrug.
+
+% Impact and Innovation
+\vspace{0.2cm}
+\noindent\rule{\textwidth}{0.5pt}
+\vspace{0.1cm}
+
+\section*{IMPACT \& INNOVATION}
+
+\textbf{Innovation:} This is the \textbf{first integration} of validated CsA-phospholipid prodrug chemistry into plant-derived extracellular vesicle carriers. Key innovations:
+
+\begin{enumerate}[leftmargin=*, topsep=0pt, itemsep=2pt]
+    \item \textbf{Dual-control architecture:} PDEV targeting/protection (Level 1) + PLA2 activation (Level 2) provide orthogonal mechanisms for spatiotemporal control of CsA delivery, superior to free prodrugs or single-component carriers.
+    \item \textbf{Builds on validated chemistry:} CsA-phospholipid prodrugs have demonstrated PLA2-triggered activation in prior art; our innovation is the \textbf{carrier integration} (plant EVs), not reinventing prodrug synthesis.
+    \item \textbf{Natural nanocarrier advantages:} PDEVs are food-derived (GRAS status potential), survive GI transit, and exhibit intrinsic anti-inflammatory properties---synergizing with CsA's immunosuppressive effects.
+    \item \textbf{Platform scalability:} Citrus juice waste as EV source (\$0.10--0.50/dose); established prodrug chemistry (contract synthesis available); modular design extensible to other drugs/enzymes/diseases.
+\end{enumerate}
+
+\textbf{Significance:} Success will yield a lead formulation with comprehensive preclinical dataset supporting Phase II IND-enabling studies. Beyond ASUC rescue therapy (75,000 cases/year in US/EU), this platform addresses a \$2B+ global CsA market constrained by toxicity. If chronic safety is demonstrated, applications extend to IBD maintenance therapy (\$500M+ opportunity), graft-versus-host disease, and organ transplantation. Our approach establishes a new paradigm for combining \textbf{natural carriers (plant EVs) with validated prodrug chemistry (PLA2-cleavable lipids)} to achieve disease-responsive drug delivery.
+
+\textbf{Commercialization Strategy:} Phase I delivers formulation, mechanism-of-action data, and patent protection (provisional filed Month 1; full utility by Month 12). Phase II (Years 2--3) will complete GLP toxicology, process scale-up, and CMC for IND filing, targeting Phase IIa clinical trial in ASUC patients by Year 4. We have preliminary discussions with three potential pharma partners (Takeda, Ferring, AbbVie) interested in differentiated oral IBD therapies. FDA regulatory path: 505(b)(2) NDA leveraging existing CsA safety data.
+
+% Milestones
+\vspace{0.2cm}
+\noindent\rule{\textwidth}{0.5pt}
+\vspace{0.1cm}
+
+\section*{GO/NO-GO MILESTONES}
+
+\textbf{Month 4:} PDEV-prodrug formulations achieve $\geq$10\% prodrug incorporation, structural integrity by TEM, and $\geq$80\% GI stability. At least 2 prodrug variants meet criteria.
+
+\textbf{Month 8:} PLA2-triggered CsA release confirmed ($\geq$3-fold vs. control); PDEV-prodrug formulation shows $\geq$50\% potency improvement (lower IC$_{50}$) in T-cell assays when PLA2 is present.
+
+\textbf{Month 12:} In vivo efficacy: $\geq$40\% DAI reduction with $<$50\% systemic CsA exposure vs. free CsA; no added toxicity; biodistribution confirms gut targeting and PLA2-dependent activation advantage over free prodrug.
+
+\textbf{Decision:} Meeting all milestones $\rightarrow$ Phase II SBIR (GLP tox, scale-up, IND prep). Partial success $\rightarrow$ Optimize prodrug structure or PDEV source; resubmit. Failure $\rightarrow$ Pivot to non-cleavable PDEV-CsA formulations or alternative enzyme-activated systems.
+
+\vspace{0.3cm}
+\hrule
+\vspace{0.2cm}
+
+\noindent\textbf{Principal Investigator:} Maria Beatriz Herrera Sanchez, PhD -- Expert in extracellular vesicles, nanomedicine, and regenerative medicine with 15+ publications on EV isolation, characterization, and therapeutic applications (Google Scholar: h-index 10, 450+ citations). Founder and Director of ExoVitae Lab, specializing in plant-derived EVs for drug delivery and tissue engineering.\\[0.2cm]
+\textbf{Key Personnel:} [Co-Investigator Name], PhD (Prodrug chemistry and medicinal chemistry expert); [Consultant Name], MD (Gastroenterologist, IBD clinical translation).\\[0.2cm]
+\textbf{Facilities:} Access to ultracentrifugation, nanoparticle tracking analysis (NTA), dynamic light scattering (DLS), transmission electron microscopy (TEM), LC-MS/MS, flow cytometry, and animal facilities for IBD models.
+
+\end{document}

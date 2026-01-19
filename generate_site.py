@@ -57,7 +57,25 @@ CONTENT = {
         'hero': {
             'title': "Professional Cleaning Services in Stockholm",
             'subtitle': "Eco-Friendly Residential and School Cleaning You Can Trust",
-            'cta': "Get a Free Quote"
+            'cta': "Get a Free Quote",
+            'or_call': "Or call"
+        },
+
+        'stats': [
+            {'number': '500+', 'label': 'Happy Clients'},
+            {'number': '10+', 'label': 'Years Experience'},
+            {'number': '100%', 'label': 'Green Products'},
+            {'number': '24h', 'label': 'Response Time'}
+        ],
+
+        'how_it_works': {
+            'title': "How It Works",
+            'subtitle': "Getting started is simple",
+            'steps': [
+                {'number': '1', 'title': 'Request a Quote', 'desc': 'Fill out our form or call us. We will discuss your needs and schedule a free assessment.'},
+                {'number': '2', 'title': 'Get Your Plan', 'desc': 'Receive a customized cleaning plan and transparent pricing within 24 hours.'},
+                {'number': '3', 'title': 'Enjoy Clean Spaces', 'desc': 'Our trained professionals arrive on schedule with eco-friendly products.'}
+            ]
         },
 
         'services_overview': {
@@ -295,7 +313,25 @@ CONTENT = {
         'hero': {
             'title': "Professionella Stadtjanster i Stockholm",
             'subtitle': "Miljovanlig Hem- och Skolstadning Du Kan Lita Pa",
-            'cta': "Fa en Gratis Offert"
+            'cta': "Fa en Gratis Offert",
+            'or_call': "Eller ring"
+        },
+
+        'stats': [
+            {'number': '500+', 'label': 'Nojda Kunder'},
+            {'number': '10+', 'label': 'Ars Erfarenhet'},
+            {'number': '100%', 'label': 'Grona Produkter'},
+            {'number': '24h', 'label': 'Svarstid'}
+        ],
+
+        'how_it_works': {
+            'title': "Sa Har Fungerar Det",
+            'subtitle': "Att komma igang ar enkelt",
+            'steps': [
+                {'number': '1', 'title': 'Begar Offert', 'desc': 'Fyll i vart formular eller ring oss. Vi diskuterar dina behov och bokar en kostnadsfri bedomning.'},
+                {'number': '2', 'title': 'Fa Din Plan', 'desc': 'Fa en skraddarsydd stadplan och transparent prissattning inom 24 timmar.'},
+                {'number': '3', 'title': 'Njut av Rena Utrymmen', 'desc': 'Vara utbildade proffs kommer enligt schema med miljovanliga produkter.'}
+            ]
         },
 
         'services_overview': {
@@ -652,6 +688,25 @@ def generate_home_page(lang):
     """Generate home page content."""
     c = CONTENT[lang]
 
+    # Stats HTML
+    stats_html = ''
+    for s in c['stats']:
+        stats_html += f'''
+            <div class="stat-item">
+                <span class="stat-number">{s['number']}</span>
+                <span class="stat-label">{s['label']}</span>
+            </div>'''
+
+    # How it works HTML
+    steps_html = ''
+    for step in c['how_it_works']['steps']:
+        steps_html += f'''
+            <div class="step-card">
+                <div class="step-number">{step['number']}</div>
+                <h3>{step['title']}</h3>
+                <p>{step['desc']}</p>
+            </div>'''
+
     # Testimonials HTML
     testimonials_html = ''
     for t in c['testimonials']['items']:
@@ -681,7 +736,19 @@ def generate_home_page(lang):
                 <div class="hero-content">
                     <h1>{c['hero']['title']}</h1>
                     <p class="hero-subtitle">{c['hero']['subtitle']}</p>
-                    <a href="{c['pages']['quote']}" class="btn btn-primary btn-lg">{c['hero']['cta']}</a>
+                    <div class="hero-actions">
+                        <a href="{c['pages']['quote']}" class="btn btn-primary btn-lg">{c['hero']['cta']}</a>
+                        <p class="hero-phone">{c['hero']['or_call']} <a href="tel:{CONTACT_INFO['phone']}">{CONTACT_INFO['phone']}</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Bar -->
+        <section class="stats-bar">
+            <div class="container">
+                <div class="stats-grid">
+                    {stats_html}
                 </div>
             </div>
         </section>
@@ -701,6 +768,17 @@ def generate_home_page(lang):
                         <p>{c['services_overview']['school']['desc']}</p>
                         <span class="card-link">Learn more</span>
                     </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="section how-it-works">
+            <div class="container">
+                <h2 class="section-title">{c['how_it_works']['title']}</h2>
+                <p class="section-subtitle">{c['how_it_works']['subtitle']}</p>
+                <div class="steps-grid">
+                    {steps_html}
                 </div>
             </div>
         </section>
@@ -1521,6 +1599,133 @@ h4 { font-size: 1.125rem; }
 
     .hero-subtitle {
         font-size: 1rem;
+    }
+}
+
+.hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hero-phone {
+    font-size: 0.9375rem;
+    color: var(--text-light);
+}
+
+.hero-phone a {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.hero-phone a:hover {
+    color: var(--primary-dark);
+}
+
+/* =============================================================================
+   Stats Bar
+   ============================================================================= */
+
+.stats-bar {
+    background: var(--text);
+    padding: 2rem 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+    color: white;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--primary-light);
+    line-height: 1.2;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--text-lighter);
+    margin-top: 0.25rem;
+}
+
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .stat-number {
+        font-size: 1.75rem;
+    }
+}
+
+/* =============================================================================
+   How It Works
+   ============================================================================= */
+
+.how-it-works {
+    background: var(--bg-alt);
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.step-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: white;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--primary);
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.step-card h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.125rem;
+}
+
+.step-card p {
+    color: var(--text-light);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .step-card {
+        padding: 1.5rem;
     }
 }
 

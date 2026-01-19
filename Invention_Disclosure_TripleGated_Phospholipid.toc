@@ -1,0 +1,47 @@
+\contentsline {section}{\numberline {1}Executive Summary}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}One-Line Description}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Key Innovation}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}True Phospholipid Constraint and Prior Art Avoidance}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Clinical Rationale}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Market Opportunity}{4}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Differentiation from Competing Approaches}{4}{subsection.1.6}%
+\contentsline {section}{\numberline {2}Background and Unmet Medical Need}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Inflammatory Bowel Disease: Clinical Burden}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Core Technologies}{5}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Plant-Derived Extracellular Vesicles (PDEVs)}{5}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Phospholipid Nanoparticles (Liposomal/Nanosphere Formulations)}{6}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}PLA$_2$-Cleavable Phospholipid Linkers}{6}{subsubsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.3}Gap in Current Technology}{7}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Detailed Invention Description}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}System Architecture}{8}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Component Overview}{8}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Triple-Gated Control Mechanism}{8}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Mechanism of Action}{9}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Oral Administration to Tissue Delivery}{9}{subsubsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.3}Therapeutic Rationale}{10}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Detailed Manufacturing Methods}{11}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Step 1: CsA-Loaded Phospholipid Nanoparticle Formulation}{11}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Lipid Film Hydration Method}{11}{subsubsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.2}Step 2: Plant-Derived Extracellular Vesicle Isolation}{12}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Citrus Juice Processing}{12}{subsubsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.3}Step 3: PLA$_2$-Cleavable Linker Incorporation}{13}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Post-Isolation Linker Insertion}{13}{subsubsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.4}Step 4: Phospholipid Nanoparticle Loading into PDEVs}{14}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Co-Incubation and Mild Extrusion Method}{14}{subsubsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.5}Step 5: Final Formulation and Quality Control}{15}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}Pharmaceutical Formulation}{15}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.2}Release Testing}{15}{subsubsection.4.5.2}%
+\contentsline {section}{\numberline {5}Patent Claims}{16}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Composition of Matter Claims}{16}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Method of Treatment Claims}{17}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Method of Manufacture Claims}{17}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Commercial and Regulatory Strategy}{19}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Target Market and Commercial Opportunity}{19}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Regulatory Pathway}{19}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Intellectual Property Strategy}{20}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Partnership and Commercialization Strategy}{21}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Conclusion}{22}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Summary of Innovation}{22}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Key Advantages}{22}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Novelty Statement for Patent Counsel}{23}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Next Steps}{23}{subsection.7.4}%

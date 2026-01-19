@@ -1,0 +1,828 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{times}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{bold-extra}
+\usepackage[parfill]{parskip}
+\usepackage{xcolor}
+
+% Formatting
+\setlength{\parindent}{0pt}
+\setstretch{1.15}
+
+\begin{document}
+
+% Title Page
+\begin{center}
+{\Huge \textbf{INVENTION DISCLOSURE}}\\[0.5cm]
+{\Large Triple-Gated Plant Extracellular Vesicle--PLGA Nanoparticle\\Platform for Enzyme-Responsive Oral Drug Delivery}\\[1cm]
+
+\begin{tabular}{ll}
+\textbf{Inventors:} & Maria Beatriz Herrera Sanchez, PhD (Lead Inventor)\\
+& [Co-Inventor Name], PhD\\[0.3cm]
+\textbf{Institution:} & ExoVitae Lab / [University/Company Name]\\[0.3cm]
+\textbf{Date:} & \today\\[0.3cm]
+\textbf{Status:} & Confidential -- For Patent Counsel Review\\
+\end{tabular}
+\end{center}
+
+\vspace{1cm}
+\hrule
+\vspace{0.5cm}
+
+\tableofcontents
+\newpage
+
+% Section 1: Executive Summary
+\section{Executive Summary}
+
+\subsection{One-Line Description}
+\textbf{A multi-compartment oral drug delivery platform in which cyclosporine A (CsA)-loaded PLGA nanoparticles are encapsulated within plant-derived extracellular vesicles (PDEVs) and tethered via phospholipase A2 (PLA2)-cleavable lipid linkers, enabling triple-gated control of drug release: GI protection via PDEVs, inflammation-triggered nanoparticle liberation via PLA2 cleavage, and sustained local release via PLGA biodegradation.}
+
+\subsection{Key Innovation}
+This invention combines three previously \textbf{separate} therapeutic strategies into a single, integrated platform:
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{PLGA nanoparticles for sustained CsA release} (established technology, widely used)
+    \item \textbf{Plant-derived extracellular vesicles as oral carriers} (emerging biocompatible platform)
+    \item \textbf{PLA2-cleavable phospholipid linkers for inflammation-triggered activation} (validated in colon-targeted prodrugs)
+\end{enumerate}
+
+The result is a \textbf{``nested'' architecture} where:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Level 1 (Targeting):} PDEVs protect PLGA NPs through stomach/small intestine and accumulate in inflamed gut tissue
+    \item \textbf{Level 2 (Activation):} Elevated PLA2 in diseased mucosa cleaves lipid linkers, releasing PLGA NPs from PDEVs
+    \item \textbf{Level 3 (Kinetics):} Liberated PLGA NPs provide sustained local CsA release over 24--72 hours
+\end{itemize}
+
+This \textbf{triple-control mechanism} maximizes local immunosuppression while minimizing systemic exposure---addressing the core challenge of CsA therapy in inflammatory bowel disease (IBD).
+
+\subsection{Differentiation from Prior Art}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{|p{4cm}|p{5cm}|p{5cm}|}
+\hline
+\textbf{Aspect} & \textbf{Prior Art} & \textbf{Our Invention} \\
+\hline
+CsA formulations & Free drug, microemulsions, single-component nanoparticles (PLGA or liposomes) & \textbf{Nested NP-in-EV architecture} with enzyme-cleavable tethers \\
+\hline
+Carrier systems & Mammalian EVs OR plant EVs (not combined with synthetic NPs) & \textbf{Hybrid PDEV-PLGA system} exploiting benefits of both natural and synthetic carriers \\
+\hline
+Targeting mechanism & Passive accumulation OR surface ligands & \textbf{Enzyme-triggered release} exploiting disease-specific PLA2 upregulation \\
+\hline
+Release control & Single mechanism (diffusion or erosion) & \textbf{Triple-gated} (PDEV protection + PLA2 activation + PLGA kinetics) \\
+\hline
+\end{tabular}
+\caption{Comparison with existing CsA drug delivery technologies.}
+\end{table}
+
+\subsection{Target Applications}
+
+\textbf{Primary indication:} Acute severe ulcerative colitis (ASUC) -- 75,000 cases/year in US/EU requiring rescue therapy.
+
+\textbf{Secondary indications:}
+\begin{itemize}[leftmargin=*]
+    \item Crohn's disease (moderate-to-severe)
+    \item Graft-versus-host disease (GVHD)
+    \item Organ transplant immunosuppression (if long-term safety demonstrated)
+\end{itemize}
+
+\textbf{Platform potential:} Extensible to other hydrophobic immunosuppressants (tacrolimus, sirolimus, everolimus) and other enzyme-triggered release systems (MMPs, cathepsins, elastases).
+
+\newpage
+
+% Section 2: Background and Unmet Need
+\section{Background and Unmet Need}
+
+\subsection{Cyclosporine A in Inflammatory Bowel Disease}
+
+Cyclosporine A (CsA) is a potent calcineurin inhibitor that blocks T-cell activation by preventing NFAT nuclear translocation and IL-2 transcription. In acute severe ulcerative colitis (ASUC), intravenous CsA achieves 60--80\% response rates as rescue therapy for patients failing high-dose corticosteroids. However, clinical utility is severely limited by:
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Nephrotoxicity:} 20--40\% of patients develop acute kidney injury (serum creatinine elevation $>$0.3 mg/dL)
+    \item \textbf{Neurotoxicity:} Tremor, paresthesias, seizures in 5--10\%
+    \item \textbf{Narrow therapeutic window:} Blood levels must be maintained at 200--400 ng/mL (higher = toxicity; lower = inefficacy)
+    \item \textbf{Pharmacokinetic variability:} Oral bioavailability: 20--50\%; food effects; CYP3A4/P-glycoprotein interactions
+\end{itemize}
+
+Current oral formulations (Neoral, Gengraf) are microemulsions that improve absorption but do \textbf{not} achieve:
+\begin{itemize}[leftmargin=*]
+    \item Gut-specific targeting (systemic exposure remains high)
+    \item Sustained local release (rapid clearance from inflamed tissue)
+    \item Disease-responsive activation (drug released in healthy and diseased tissue equally)
+\end{itemize}
+
+\subsection{Existing Nanoformulation Strategies (Single-Level Control)}
+
+\subsubsection{PLGA Nanoparticles}
+Poly(lactic-co-glycolic acid) is an FDA-approved biodegradable polymer widely used for sustained drug release. CsA-loaded PLGA NPs improve:
+\begin{itemize}[leftmargin=*]
+    \item Solubility (hydrophobic CsA encapsulated in polymer matrix)
+    \item Release kinetics (hours to days, tunable via polymer MW and LA:GA ratio)
+    \item Mucosal adhesion (some formulations)
+\end{itemize}
+
+\textbf{Limitations:}
+\begin{itemize}[leftmargin=*]
+    \item Poor GI stability (degradation in acidic stomach pH; enzymatic attack)
+    \item Non-specific uptake (absorbed systemically and in healthy tissue)
+    \item No intrinsic targeting or activation mechanism
+\end{itemize}
+
+\subsubsection{Plant-Derived Extracellular Vesicles (PDEVs)}
+PDEVs are naturally occurring nanoparticles (50--300 nm) secreted by plant cells. Citrus, grapefruit, ginger, and grape EVs have been shown to:
+\begin{itemize}[leftmargin=*]
+    \item Survive gastric pH and proteolytic enzymes
+    \item Cross intestinal epithelial barriers (M-cell transcytosis, macropinocytosis)
+    \item Deliver bioactive cargo (lipids, proteins, nucleic acids) to mammalian cells
+    \item Exhibit anti-inflammatory properties (citrus EVs reduce colitis severity in mice)
+    \item Have low immunogenicity and GRAS (Generally Recognized As Safe) status potential
+\end{itemize}
+
+\textbf{Limitations:}
+\begin{itemize}[leftmargin=*]
+    \item Passive drug loading only (limited to hydrophobic molecules in membrane)
+    \item No controlled release (drug diffuses out passively)
+    \item Batch-to-batch variability (natural source)
+\end{itemize}
+
+\subsubsection{PLA2-Cleavable Phospholipid Prodrugs}
+Secreted phospholipase A2 (sPLA2, especially group IIA) is upregulated 10--100-fold in inflamed intestinal mucosa in IBD. CsA-phospholipid conjugates with sn-2 ester bonds have been developed as colon-targeted prodrugs:
+\begin{itemize}[leftmargin=*]
+    \item CsA remains inactive (locked) until PLA2 cleaves the lipid
+    \item Selective activation in diseased tissue
+    \item Reduced systemic toxicity
+\end{itemize}
+
+\textbf{Limitations:}
+\begin{itemize}[leftmargin=*]
+    \item Still requires oral delivery vehicle for GI protection
+    \item Single-step activation (no sustained release after cleavage)
+    \item Complex synthesis (low yields, high cost)
+\end{itemize}
+
+\subsection{Gap in the Field}
+
+\textbf{No prior work has combined PLGA NPs, plant EVs, and enzyme-cleavable linkers into a single platform.} Each technology addresses one aspect of the problem:
+\begin{itemize}[leftmargin=*]
+    \item PLGA = kinetics control
+    \item PDEVs = GI protection + targeting
+    \item PLA2 linkers = activation trigger
+\end{itemize}
+
+Our invention \textbf{integrates all three}, creating a multi-level control system that is greater than the sum of its parts.
+
+\newpage
+
+% Section 3: Detailed Invention Description
+\section{Detailed Invention Description}
+
+\subsection{Inventive Concept: Triple-Gated Architecture}
+
+\subsubsection{System Overview}
+
+The invention is a \textbf{nested nanoparticle-in-vesicle platform} with the following structure:
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Core:} Cyclosporine A encapsulated in PLGA nanoparticles (100--200 nm diameter)
+    \begin{itemize}
+        \item PLGA composition: 50:50 to 75:25 lactide:glycolide ratio (MW 10--100 kDa)
+        \item CsA loading: 5--15 wt\%
+        \item Release profile: 24--72 hours in vitro (phosphate buffer, pH 7.4, 37°C)
+    \end{itemize}
+
+    \item \textbf{Shell:} Plant-derived extracellular vesicles (150--300 nm diameter) encapsulating the PLGA NPs
+    \begin{itemize}
+        \item Source: \textit{Citrus sinensis} (sweet orange), \textit{Citrus paradisi} (grapefruit), or other edible plants
+        \item Isolated via differential centrifugation + size-exclusion chromatography or tangential flow filtration
+        \item Characterized by: CD63, TSG101 (EV markers); size, PDI, zeta potential
+    \end{itemize}
+
+    \item \textbf{Linker:} PLA2-cleavable phospholipid molecules inserted into the PDEV membrane
+    \begin{itemize}
+        \item Structure: Phospholipid with sn-2 ester bond susceptible to sPLA2 cleavage
+        \item Function: Tether PLGA NPs to the inner surface of the PDEV membrane
+        \item Activation: PLA2 cleavage releases PLGA NPs from PDEV confinement
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection{Triple-Gated Mechanism of Action}
+
+\textbf{Gate 1 -- GI Protection and Tissue Targeting (PDEV Function):}
+\begin{itemize}[leftmargin=*]
+    \item After oral administration, PDEVs protect internal PLGA NPs from:
+    \begin{itemize}
+        \item Acidic gastric pH (PDEVs are stable at pH 1.2 for $>$2 hours)
+        \item Proteolytic enzymes (pepsin, trypsin)
+        \item Premature drug release in stomach/small intestine
+    \end{itemize}
+    \item PDEVs accumulate preferentially in inflamed intestinal tissue via:
+    \begin{itemize}
+        \item Enhanced permeability (disrupted epithelial barrier in IBD)
+        \item M-cell transcytosis in Peyer's patches
+        \item Macrophage/dendritic cell uptake in lamina propria
+    \end{itemize}
+\end{itemize}
+
+\textbf{Gate 2 -- Inflammation-Triggered Release (PLA2 Activation):}
+\begin{itemize}[leftmargin=*]
+    \item In healthy tissue: Low PLA2 activity $\rightarrow$ linkers remain intact $\rightarrow$ PLGA NPs stay confined in PDEVs
+    \item In inflamed tissue: Elevated sPLA2-IIA (10--100-fold increase) $\rightarrow$ cleaves sn-2 ester bonds $\rightarrow$ liberates PLGA NPs from PDEV membrane
+    \item This creates spatial selectivity: PLGA NPs are released preferentially where disease is active
+\end{itemize}
+
+\textbf{Gate 3 -- Sustained Local Release (PLGA Kinetics):}
+\begin{itemize}[leftmargin=*]
+    \item Once liberated, PLGA NPs undergo biodegradation in the inflamed mucosa
+    \item CsA is released gradually over 24--72 hours via:
+    \begin{itemize}
+        \item Diffusion through polymer matrix (initial burst)
+        \item Polymer erosion (sustained phase)
+        \item pH-dependent hydrolysis (accelerated in acidic microenvironment of inflamed tissue)
+    \end{itemize}
+    \item This sustains local immunosuppression without repeated dosing
+\end{itemize}
+
+\subsubsection{Synergistic Advantages}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{Challenge} & \textbf{How Triple-Gated System Addresses It} \\
+\hline
+CsA poor oral bioavailability & PLGA encapsulation + PDEV-mediated uptake $\rightarrow$ improved absorption \\
+\hline
+Systemic toxicity (kidney, CNS) & Triple-gated targeting + activation $\rightarrow$ preferential accumulation in gut, minimal systemic exposure \\
+\hline
+Short drug residence time in mucosa & PLGA sustained release $\rightarrow$ 24--72h local CsA levels \\
+\hline
+Non-specific drug delivery & PLA2 activation $\rightarrow$ drug released preferentially at inflamed sites \\
+\hline
+GI instability of nanoparticles & PDEV shell $\rightarrow$ protects PLGA NPs through stomach and small intestine \\
+\hline
+\end{tabular}
+\caption{Synergistic problem-solving via triple-gated control.}
+\end{table}
+
+\newpage
+
+% Section 4: Detailed Manufacturing Method
+\section{Detailed Manufacturing Method}
+
+\subsection{Step 1: CsA-Loaded PLGA Nanoparticle Formulation}
+
+\subsubsection{Method A: Nanoprecipitation (Preferred for Simplicity)}
+
+\textbf{Materials:}
+\begin{itemize}[leftmargin=*]
+    \item PLGA (50:50 LA:GA, MW 20--40 kDa, Sigma-Aldrich)
+    \item Cyclosporine A (Sigma C3662 or equivalent)
+    \item Organic solvent: Acetone or acetonitrile
+    \item Stabilizer: Poloxamer 188 or polyvinyl alcohol (PVA, 1--2\% w/v in water)
+\end{itemize}
+
+\textbf{Protocol:}
+\begin{enumerate}[leftmargin=*]
+    \item Dissolve PLGA (100 mg) + CsA (10--20 mg) in 5 mL acetone (organic phase)
+    \item Add dropwise to 20 mL aqueous phase (1\% PVA) under magnetic stirring (500 rpm)
+    \item Continue stirring for 2--4 hours to evaporate organic solvent
+    \item Collect NPs by centrifugation (15,000$\times$g, 20 min) or ultrafiltration
+    \item Wash 2$\times$ with water to remove free CsA and stabilizer
+    \item Resuspend in PBS or trehalose solution (5\% w/v)
+\end{enumerate}
+
+\textbf{Characterization:}
+\begin{itemize}[leftmargin=*]
+    \item Size: NTA or DLS (target: 100--200 nm, PDI $<$ 0.2)
+    \item Zeta potential: Target: $-$10 to $-$30 mV (slightly negative for colloidal stability)
+    \item CsA loading: Lyse NPs in acetonitrile, quantify CsA by HPLC or LC-MS/MS
+    \item Encapsulation efficiency (EE\%): (CsA in NPs / Total CsA added) $\times$ 100. Target: $\geq$60\%
+    \item In vitro release: Dialysis bag method (MWCO 50 kDa) in PBS pH 7.4 at 37°C; sample at 1, 6, 12, 24, 48, 72h
+\end{itemize}
+
+\subsubsection{Method B: Double Emulsion (for Higher Loading)}
+
+\textbf{Protocol:}
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{W1 phase:} Dissolve CsA (20 mg) in 1 mL ethanol
+    \item \textbf{O phase:} Dissolve PLGA (200 mg) in 10 mL dichloromethane (DCM)
+    \item \textbf{W1/O emulsion:} Add W1 to O dropwise under sonication (30 sec, 20\% amplitude)
+    \item \textbf{W2 phase:} 40 mL aqueous PVA (2\% w/v)
+    \item \textbf{W1/O/W2 emulsion:} Add W1/O to W2 under homogenization (10,000 rpm, 5 min)
+    \item Evaporate DCM under reduced pressure or stirring (4h, room temp)
+    \item Collect and wash NPs as above
+\end{enumerate}
+
+\subsection{Step 2: Plant EV Isolation}
+
+\textbf{Source Material:} Fresh-pressed juice from \textit{Citrus sinensis} (sweet orange) or \textit{Citrus paradisi} (grapefruit). Use organic, commercially available juice or fresh-squeeze.
+
+\textbf{Isolation Protocol (Differential Centrifugation + Size Exclusion Chromatography):}
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Clarification:} Centrifuge juice at 500$\times$g (10 min) $\rightarrow$ 2,000$\times$g (20 min) $\rightarrow$ 10,000$\times$g (30 min, 4°C) to remove pulp, cells, and debris
+    \item \textbf{EV enrichment:} Ultracentrifuge supernatant at 100,000$\times$g (90 min, 4°C) to pellet EVs
+    \item \textbf{Purification:} Resuspend pellet in PBS; apply to qEV size-exclusion columns (Izon Science, 70 nm separation size) or equivalent
+    \item \textbf{Collection:} Collect fractions 7--9 (EV-enriched, excludes free proteins and small molecules)
+    \item \textbf{Concentration:} Use tangential flow filtration (TFF) with 100 kDa MWCO to concentrate to desired volume
+\end{enumerate}
+
+\textbf{Characterization:}
+\begin{itemize}[leftmargin=*]
+    \item Particle concentration: NTA (target: 10$^{10}$--10$^{11}$ particles/mL)
+    \item Size: Mean diameter 100--200 nm, PDI $<$ 0.3
+    \item Morphology: TEM (negative stain with uranyl acetate; expect cup-shaped vesicles)
+    \item EV markers: Western blot for CD63, TSG101 (enriched vs. crude juice)
+    \item Protein content: BCA assay (yield: 50--200 $\mu$g protein per mL juice)
+\end{itemize}
+
+\subsection{Step 3: PLA2-Cleavable Linker Synthesis and Incorporation}
+
+\subsubsection{Linker Design}
+
+\textbf{Concept:} Use phospholipids with PLA2-sensitive sn-2 position as the cleavable element, adapted from validated colon-targeted prodrug designs.
+
+\textbf{Candidate Structure:} 1-palmitoyl-2-(homoserinyl)-sn-glycero-3-phosphocholine or similar with:
+\begin{itemize}[leftmargin=*]
+    \item sn-1: Long-chain fatty acid (C16--C18) for membrane insertion
+    \item sn-2: Ester bond linking to a functionalized moiety (e.g., homoserine) that can cross-link to PLGA NP surface
+    \item sn-3: Phosphocholine head group for aqueous solubility
+\end{itemize}
+
+\textbf{Synthesis:} Custom synthesis by contract chemistry lab (e.g., Avanti Polar Lipids, ChemCruz) or in-house via standard phospholipid chemistry. Budget: \$5,000--10,000 for 3--5 linker variants.
+
+\subsubsection{Incorporation into PDEVs}
+
+\textbf{Method:}
+\begin{enumerate}[leftmargin=*]
+    \item Prepare PLA2-cleavable lipids in ethanol or DMSO (10 mM stock)
+    \item Add to purified PDEVs (lipid:EV ratio: 1:100 to 1:10 mol:mol) under gentle mixing
+    \item Incubate at 37°C for 30--60 min to allow lipid insertion into EV membrane
+    \item Remove free lipids via SEC or ultracentrifugation
+    \item Confirm incorporation:
+    \begin{itemize}
+        \item LC-MS: Detect linker lipid in PDEV lipid extract
+        \item TEM: No gross morphological changes
+        \item Zeta potential shift (linkers may alter surface charge)
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Step 4: PLGA NP Encapsulation into PDEVs}
+
+\textbf{Method A: Co-incubation with Mild Sonication}
+\begin{enumerate}[leftmargin=*]
+    \item Mix CsA-PLGA NPs (1 mg/mL) with linker-functionalized PDEVs (1 mg protein/mL) at defined ratios (e.g., 1:1, 1:5, 1:10 NP:EV)
+    \item Incubate at 37°C for 1--2 hours under gentle rotation (10 rpm)
+    \item Apply brief bath sonication (30 sec, low power) to facilitate NP entry into EVs
+    \item Purify hybrids via density gradient centrifugation (e.g., OptiPrep or sucrose gradient) to separate NP-loaded EVs from free NPs and empty EVs
+\end{enumerate}
+
+\textbf{Method B: Extrusion}
+\begin{enumerate}[leftmargin=*]
+    \item Mix NPs + PDEVs as above
+    \item Pass mixture through polycarbonate membrane filters (400 nm, 200 nm pore size) using mini-extruder
+    \item This forces NPs into EVs via mechanical shear
+    \item Purify as above
+\end{enumerate}
+
+\textbf{Characterization of PDEV-PLGA-CsA Hybrids:}
+\begin{itemize}[leftmargin=*]
+    \item Size: Expect increase from ~150 nm (empty PDEV) to 200--300 nm (loaded)
+    \item NP encapsulation efficiency:
+    \begin{itemize}
+        \item Quantitative: Flow cytometry (if NPs are fluorescently labeled)
+        \item Semi-quantitative: TEM imaging (count NPs per EV in $>$50 EVs)
+        \item Biochemical: Measure CsA content in purified hybrids; calculate CsA/EV protein ratio
+    \end{itemize}
+    \item Structural integrity: TEM should show PLGA NPs inside PDEVs (not aggregated on surface)
+    \item Stability: Monitor size and CsA content over 4 weeks at 4°C, $-$20°C, $-$80°C
+\end{itemize}
+
+\subsection{Step 5: Final Formulation and Quality Control}
+
+\textbf{Formulation:}
+\begin{itemize}[leftmargin=*]
+    \item Add lyoprotectant (trehalose or sucrose, 5--10\% w/v) to stabilize during storage or lyophilization
+    \item For oral dosing:
+    \begin{itemize}
+        \item Liquid suspension: Store at 4°C (use within 4 weeks) or $-$80°C (long-term)
+        \item Enteric-coated capsules: Lyophilize PDEV-PLGA-CsA hybrids; fill into capsules with enteric coating (Eudragit L100-55 or similar) to protect through stomach
+    \end{itemize}
+\end{itemize}
+
+\textbf{Release Specifications (for clinical development):}
+\begin{itemize}[leftmargin=*]
+    \item CsA content: 90--110\% of label claim (HPLC/LC-MS)
+    \item Particle size: 150--350 nm (NTA)
+    \item Encapsulation efficiency: $\geq$40\% of NPs associated with EVs (flow cytometry or TEM)
+    \item Sterility: USP $<$71$>$ (if for GMP)
+    \item Endotoxin: $<$5 EU/dose (LAL assay)
+    \item Stability: $\geq$90\% CsA retained at 4°C for 6 months
+\end{itemize}
+
+\newpage
+
+% Section 5: Patent Claims
+\section{Patent Claims (Draft for Counsel)}
+
+\subsection{Independent Claim 1: Composition of Matter}
+
+\textbf{Claim 1.} A pharmaceutical composition comprising:
+\begin{enumerate}[label=(\alph*),leftmargin=*]
+    \item plant-derived extracellular vesicles;
+    \item poly(lactic-co-glycolic acid) (PLGA) nanoparticles encapsulated within the plant-derived extracellular vesicles, wherein the PLGA nanoparticles comprise cyclosporine A; and
+    \item phospholipid linkers associated with a membrane of the plant-derived extracellular vesicles,
+\end{enumerate}
+wherein the phospholipid linkers are cleavable by phospholipase A2 (PLA2) and mediate association of the PLGA nanoparticles with the plant-derived extracellular vesicles such that PLA2 activity promotes release of the PLGA nanoparticles from the plant-derived extracellular vesicles.
+
+\subsection{Dependent Claims (Examples)}
+
+\textbf{Claim 2.} The composition of Claim 1, wherein the plant-derived extracellular vesicles are isolated from a plant source selected from the group consisting of \textit{Citrus sinensis}, \textit{Citrus paradisi}, \textit{Citrus limon}, \textit{Zingiber officinale}, \textit{Vitis vinifera}, and \textit{Brassica oleracea}.
+
+\textbf{Claim 3.} The composition of Claim 1, wherein the PLGA nanoparticles have a mean diameter between 50 nm and 250 nm.
+
+\textbf{Claim 4.} The composition of Claim 1, wherein the cyclosporine A loading in the PLGA nanoparticles is between 5 wt\% and 20 wt\%.
+
+\textbf{Claim 5.} The composition of Claim 1, wherein the phospholipid linkers comprise a sn-2 ester bond that is selectively cleaved by secreted phospholipase A2 group IIA (sPLA2-IIA).
+
+\textbf{Claim 6.} The composition of Claim 1, wherein the phospholipid linkers are 1-palmitoyl-2-(homoserinyl)-sn-glycero-3-phosphocholine or a structural analog thereof.
+
+\textbf{Claim 7.} The composition of Claim 1, wherein the plant-derived extracellular vesicles have a mean diameter between 100 nm and 350 nm.
+
+\textbf{Claim 8.} The composition of Claim 1, wherein the PLGA is a copolymer with a lactide:glycolide molar ratio between 50:50 and 85:15.
+
+\textbf{Claim 9.} The composition of Claim 1, wherein the PLGA nanoparticles provide sustained release of cyclosporine A over a period of 24 to 72 hours in vitro in phosphate-buffered saline at pH 7.4 and 37°C.
+
+\textbf{Claim 10.} The composition of Claim 1, wherein the plant-derived extracellular vesicles retain at least 50\% of endogenous plant bioactive compounds selected from flavonoids, polyphenols, and carotenoids.
+
+\subsection{Independent Claim 2: Method of Treatment}
+
+\textbf{Claim 11.} A method of treating inflammatory bowel disease in a subject in need thereof, comprising orally administering to the subject a therapeutically effective amount of the composition of Claim 1,
+
+wherein phospholipase A2 activity in inflamed intestinal tissue cleaves the phospholipid linkers and triggers release of the PLGA nanoparticles from the plant-derived extracellular vesicles into the inflamed tissue, resulting in sustained local cyclosporine A delivery.
+
+\textbf{Claim 12.} The method of Claim 11, wherein the inflammatory bowel disease is selected from the group consisting of ulcerative colitis, acute severe ulcerative colitis (ASUC), Crohn's disease, and indeterminate colitis.
+
+\textbf{Claim 13.} The method of Claim 11, wherein the oral administration achieves a plasma area-under-the-curve (AUC) of cyclosporine A that is less than 60\% of the AUC achieved by an equivalent oral dose of free cyclosporine A.
+
+\textbf{Claim 14.} The method of Claim 11, wherein the oral administration achieves a tissue concentration of cyclosporine A in the colon that is at least 2-fold higher than the tissue concentration achieved by an equivalent oral dose of free cyclosporine A.
+
+\textbf{Claim 15.} The method of Claim 11, wherein the oral administration results in reduced nephrotoxicity compared to an equivalent dose of free cyclosporine A, as measured by serum creatinine or blood urea nitrogen levels.
+
+\subsection{Independent Claim 3: Method of Manufacture}
+
+\textbf{Claim 16.} A method of producing a multi-compartment cyclosporine A formulation, comprising:
+\begin{enumerate}[label=(\alph*),leftmargin=*]
+    \item preparing PLGA nanoparticles comprising cyclosporine A by nanoprecipitation or emulsion polymerization;
+    \item isolating extracellular vesicles from an edible plant material by differential centrifugation and size-exclusion chromatography or tangential flow filtration;
+    \item functionalizing the extracellular vesicles with phospholipid linkers comprising a sn-2 ester bond that is cleavable by phospholipase A2; and
+    \item contacting the functionalized extracellular vesicles with the PLGA nanoparticles under conditions that allow the PLGA nanoparticles to be encapsulated within the extracellular vesicles and associated therewith via the phospholipid linkers,
+\end{enumerate}
+thereby obtaining plant-derived extracellular vesicles containing cyclosporine A-loaded PLGA nanoparticles tethered by phospholipase A2-cleavable phospholipid linkers.
+
+\textbf{Claim 17.} The method of Claim 16, wherein the conditions for encapsulating the PLGA nanoparticles within the extracellular vesicles comprise incubation at 37°C for 1--2 hours with gentle agitation, optionally followed by brief sonication or extrusion through a polycarbonate membrane.
+
+\textbf{Claim 18.} The method of Claim 16, further comprising purifying the plant-derived extracellular vesicles containing the PLGA nanoparticles by density gradient centrifugation to separate nanoparticle-loaded vesicles from free nanoparticles and empty vesicles.
+
+\textbf{Claim 19.} The method of Claim 16, wherein the encapsulation efficiency is at least 40\%, defined as the percentage of PLGA nanoparticles associated with the extracellular vesicles.
+
+\subsection{Additional Claim Directions}
+
+\textbf{Broadening to drug class:}
+\begin{itemize}[leftmargin=*]
+    \item Replace "cyclosporine A" with "a hydrophobic calcineurin inhibitor selected from cyclosporine A, tacrolimus, pimecrolimus, and pharmaceutically acceptable salts thereof"
+    \item Further broaden to "a hydrophobic immunosuppressant" (includes sirolimus, everolimus)
+\end{itemize}
+
+\textbf{Broadening to polymer class:}
+\begin{itemize}[leftmargin=*]
+    \item Replace "PLGA" with "a biodegradable polyester selected from poly(lactic-co-glycolic acid), polylactic acid, polycaprolactone, and copolymers thereof"
+\end{itemize}
+
+\textbf{Broadening to enzyme class:}
+\begin{itemize}[leftmargin=*]
+    \item Replace "PLA2" with "an inflammation-associated enzyme selected from phospholipase A2, matrix metalloproteinase (MMP), cathepsin, and elastase"
+    \item Design linkers cleavable by each enzyme class
+\end{itemize}
+
+\textbf{Additional use claims:}
+\begin{itemize}[leftmargin=*]
+    \item Graft-versus-host disease (GVHD)
+    \item Organ transplant rejection
+    \item Psoriasis, atopic dermatitis (topical or oral)
+\end{itemize}
+
+\newpage
+
+% Section 6: Prophetic Examples
+\section{Prophetic Examples}
+
+\subsection{Example 1: CsA-Loaded PLGA Nanoparticle Formulation}
+
+\textbf{Procedure:} PLGA (50:50 LA:GA, MW 30 kDa, 100 mg) and cyclosporine A (15 mg) were dissolved in 5 mL acetone (organic phase). This solution was added dropwise to 20 mL aqueous solution containing 1\% (w/v) polyvinyl alcohol (PVA) under magnetic stirring (500 rpm). After 4 hours of stirring to evaporate acetone, nanoparticles were collected by centrifugation (15,000$\times$g, 20 min, 4°C), washed twice with water, and resuspended in PBS.
+
+\textbf{Expected Results:}
+\begin{itemize}[leftmargin=*]
+    \item Mean diameter: 145 $\pm$ 25 nm (NTA)
+    \item Polydispersity index (PDI): 0.18 $\pm$ 0.03
+    \item Zeta potential: $-$18 $\pm$ 4 mV
+    \item CsA loading: 12.5 wt\% (HPLC quantification)
+    \item Encapsulation efficiency: 83\%
+    \item In vitro release: 15\% at 1h (burst), 45\% at 24h, 78\% at 72h (cumulative)
+\end{itemize}
+
+\textbf{Interpretation:} PLGA NPs with clinically relevant size, high CsA loading, and sustained release profile suitable for colon-targeted delivery.
+
+\subsection{Example 2: Isolation and Characterization of Citrus EVs}
+
+\textbf{Procedure:} Fresh sweet orange juice (2 L, organic) was clarified by sequential centrifugation (500$\times$g, 10 min; 2,000$\times$g, 20 min; 10,000$\times$g, 30 min). The supernatant was ultracentrifuged (100,000$\times$g, 90 min, 4°C) to pellet EVs. The pellet was resuspended in PBS and purified by size-exclusion chromatography (qEV columns, Izon Science). Fractions 7--9 were collected and concentrated by tangential flow filtration (100 kDa MWCO).
+
+\textbf{Expected Results:}
+\begin{itemize}[leftmargin=*]
+    \item Yield: 120 $\mu$g EV protein per mL juice (BCA assay)
+    \item Particle concentration: 8 $\times$ 10$^{10}$ particles/mL (NTA)
+    \item Mean diameter: 165 $\pm$ 45 nm
+    \item PDI: 0.27
+    \item Morphology: TEM shows cup-shaped vesicles with intact bilayer membranes
+    \item EV markers: Western blot positive for CD63, TSG101 (enriched 15-fold vs. crude juice)
+    \item Bioactive cargo: HPLC detects hesperidin (32 $\mu$g/mg protein), naringenin (14 $\mu$g/mg protein)
+\end{itemize}
+
+\textbf{Interpretation:} Citrus EVs isolated with high purity, typical exosome-like characteristics, and retention of endogenous bioactive flavonoids.
+
+\subsection{Example 3: PLA2-Cleavable Linker Incorporation}
+
+\textbf{Procedure:} Custom-synthesized 1-palmitoyl-2-(homoserinyl)-sn-glycero-3-phosphocholine (PLA2-sensitive linker) was dissolved in ethanol (10 mM stock). Linker (50 $\mu$L) was added to purified citrus EVs (1 mL, 1 mg protein/mL) and incubated at 37°C for 45 min with gentle mixing. Free linkers were removed by size-exclusion chromatography. Incorporation was confirmed by LC-MS analysis of EV lipid extracts.
+
+\textbf{Expected Results:}
+\begin{itemize}[leftmargin=*]
+    \item Linker incorporation: 3.5\% of total EV phospholipids (LC-MS quantification)
+    \item Size: 170 $\pm$ 50 nm (slight increase vs. unmodified EVs)
+    \item Zeta potential shift: from $-$22 mV to $-$15 mV (linker adds positive charge)
+    \item TEM: No gross morphological changes; EVs remain intact
+\end{itemize}
+
+\textbf{Interpretation:} Successful insertion of PLA2-sensitive linkers into EV membranes without disrupting structural integrity.
+
+\subsection{Example 4: PLGA NP Encapsulation into PDEVs}
+
+\textbf{Procedure:} CsA-PLGA NPs (from Example 1, 1 mg/mL) were mixed with linker-modified citrus EVs (from Example 3, 1 mg protein/mL) at 1:5 NP:EV mass ratio. The mixture was incubated at 37°C for 2 hours under gentle rotation (10 rpm), followed by brief bath sonication (30 sec, 20\% power). PDEV-PLGA hybrids were purified by OptiPrep density gradient centrifugation (collecting the fraction at 1.10--1.15 g/mL density).
+
+\textbf{Expected Results:}
+\begin{itemize}[leftmargin=*]
+    \item Mean diameter: 285 $\pm$ 65 nm (NTA; increased from 165 nm for empty EVs)
+    \item NP encapsulation efficiency: 52\% (flow cytometry with fluorescent NPs)
+    \item TEM: 2--5 PLGA NPs visible inside each EV; NPs appear tethered to inner membrane
+    \item CsA content: 8 $\mu$g CsA per mg EV protein
+    \item Stability: $>$85\% of CsA retained at 4°C for 4 weeks; size remains stable
+\end{itemize}
+
+\textbf{Interpretation:} Successful formation of PDEV-PLGA-CsA hybrids with reproducible NP loading and colloidal stability.
+
+\subsection{Example 5: PLA2-Triggered NP Release}
+
+\textbf{Procedure:} PDEV-PLGA-CsA hybrids (from Example 4) were incubated with: (1) PBS alone, (2) recombinant sPLA2-IIA (1 $\mu$g/mL), or (3) colon tissue homogenates from DSS-colitis mice (protein concentration normalized). After 0, 1, 3, 6 hours, samples were centrifuged (10,000$\times$g, 10 min) to separate released NPs (supernatant) from intact PDEV-PLGA complexes (pellet). PLGA NPs in supernatant were quantified by fluorescence (if labeled) or HPLC (CsA content).
+
+\textbf{Expected Results:}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Condition} & \textbf{1h (\% NP release)} & \textbf{3h} & \textbf{6h} \\
+\hline
+PBS alone & 8 $\pm$ 2\% & 12 $\pm$ 3\% & 18 $\pm$ 4\% \\
+\hline
+sPLA2-IIA (1 $\mu$g/mL) & 28 $\pm$ 5\% & 52 $\pm$ 7\% & 68 $\pm$ 9\% \\
+\hline
+Inflamed tissue homogenate & 35 $\pm$ 6\% & 58 $\pm$ 8\% & 72 $\pm$ 10\% \\
+\hline
+\end{tabular}
+\caption{PLA2-triggered PLGA NP release from PDEV-PLGA-CsA hybrids.}
+\end{table}
+
+\textbf{Interpretation:} PLA2 activity (recombinant enzyme or from inflamed tissue) increases NP release 3--4-fold vs. passive diffusion, confirming enzyme-responsive activation mechanism.
+
+\subsection{Example 6: In Vitro T-Cell Suppression}
+
+\textbf{Procedure:} Human PBMCs were activated with anti-CD3/CD28 beads (Dynabeads, 1:1 bead:cell ratio) in 96-well plates (2 $\times$ 10$^5$ cells/well). Treatments were added simultaneously: (1) vehicle, (2) free CsA (50 ng/mL), (3) CsA-PLGA NPs (50 ng/mL CsA-equivalent), (4) PDEV-PLGA-CsA without cleavable linkers (50 ng/mL CsA), (5) PDEV-PLGA-CsA with PLA2-cleavable linkers (25 ng/mL CsA). Some wells also received recombinant sPLA2-IIA (1 $\mu$g/mL) to mimic inflamed tissue. After 48h, supernatants were collected and IL-2 was measured by ELISA.
+
+\textbf{Expected Results:}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Treatment} & \textbf{IL-2 (pg/mL)} & \textbf{\% Suppression vs. vehicle} \\
+\hline
+Vehicle (activated, no CsA) & 1,250 $\pm$ 150 & -- \\
+\hline
+Free CsA (50 ng/mL) & 620 $\pm$ 85 & 50\% \\
+\hline
+CsA-PLGA NPs (50 ng/mL) & 550 $\pm$ 70 & 56\% \\
+\hline
+PDEV-PLGA-CsA, no linker (50 ng/mL) & 680 $\pm$ 95 & 46\% \\
+\hline
+PDEV-PLGA-CsA + PLA2 linker (25 ng/mL) & 700 $\pm$ 100 & 44\% \\
+\hline
+PDEV-PLGA-CsA + PLA2 linker (25 ng/mL) + sPLA2 & 480 $\pm$ 65 & 62\% \\
+\hline
+\end{tabular}
+\caption{In vitro immunosuppressive activity with and without PLA2 activation.}
+\end{table}
+
+\textbf{Interpretation:} In the presence of PLA2, the cleavable PDEV-PLGA-CsA formulation achieves superior suppression \textbf{at half the CsA dose} compared to free CsA or non-cleavable controls, confirming enzyme-triggered potentiation.
+
+\subsection{Example 7: In Vivo Efficacy and Safety in DSS-Colitis Model (Conceptual)}
+
+\textbf{Study Design:} C57BL/6 mice (n=10/group) receive 2.5\% DSS in drinking water for 7 days to induce colitis. On days 3--7, mice are orally gavaged once daily with:
+\begin{enumerate}
+    \item Vehicle (PBS)
+    \item Free CsA (10 mg/kg in microemulsion)
+    \item CsA-PLGA NPs (10 mg/kg CsA-equivalent)
+    \item Non-cleavable PDEV-PLGA-CsA (10 mg/kg)
+    \item PLA2-cleavable PDEV-PLGA-CsA (5 mg/kg CsA-equivalent)
+\end{enumerate}
+
+\textbf{Expected Results:}
+
+\textbf{Efficacy (Day 8):}
+\begin{itemize}[leftmargin=*]
+    \item Disease activity index (DAI): Vehicle = 9.2 $\pm$ 1.3; Free CsA = 4.8 $\pm$ 0.9; PLGA NPs = 4.2 $\pm$ 0.8; Non-cleavable PDEV-PLGA = 4.5 $\pm$ 0.9; \textbf{PLA2-cleavable PDEV-PLGA = 3.5 $\pm$ 0.7} (61\% reduction vs. vehicle, superior to all controls)
+    \item Colon length: Vehicle = 5.2 cm; \textbf{PLA2-cleavable PDEV-PLGA = 6.8 cm} (closer to healthy = 7.5 cm)
+    \item Histology score: \textbf{PLA2-cleavable group shows 55\% lower inflammation score vs. vehicle}
+\end{itemize}
+
+\textbf{Pharmacokinetics and Safety:}
+\begin{itemize}[leftmargin=*]
+    \item Plasma CsA AUC$_{0-6h}$: Free CsA (10 mg/kg) = 3,800 ng$\cdot$h/mL; \textbf{PLA2-cleavable PDEV-PLGA (5 mg/kg) = 1,100 ng$\cdot$h/mL} (71\% lower systemic exposure despite superior efficacy)
+    \item Colonic CsA concentration (terminal): Free CsA = 15 $\mu$g/g tissue; \textbf{PLA2-cleavable PDEV-PLGA = 48 $\mu$g/g} (3.2-fold higher local accumulation)
+    \item Serum creatinine: Vehicle = 0.24 mg/dL; Free CsA = 0.46 mg/dL (92\% increase); \textbf{PLA2-cleavable PDEV-PLGA = 0.28 mg/dL} (17\% increase, not significant)
+    \item Kidney histology: Free CsA shows moderate tubular vacuolation; \textbf{PLA2-cleavable PDEV-PLGA shows minimal changes} (similar to vehicle)
+\end{itemize}
+
+\textbf{Interpretation:} Triple-gated PDEV-PLGA-CsA platform achieves superior therapeutic index---better efficacy at lower systemic exposure and no nephrotoxicity---validating all three control mechanisms (PDEV targeting, PLA2 activation, PLGA release).
+
+\newpage
+
+% Section 7: Commercial and Regulatory Strategy
+\section{Commercial and Regulatory Strategy}
+
+\subsection{Market Opportunity}
+
+\textbf{Primary market: ASUC rescue therapy}
+\begin{itemize}[leftmargin=*]
+    \item Epidemiology: 75,000 cases/year (US + EU)
+    \item Current treatment: IV CsA (60--80\% response) or infliximab (biologics, \$15K--20K/infusion)
+    \item Unmet need: Safer oral CsA alternative to avoid colectomy (\$50K procedure + ICU stay)
+    \item Pricing: \$3,000--5,000 per treatment course (7--14 days)
+    \item Market size: \$50M--100M annually (conservative penetration)
+\end{itemize}
+
+\textbf{Secondary markets:}
+\begin{itemize}[leftmargin=*]
+    \item IBD maintenance therapy (if long-term safety demonstrated): \$500M+ opportunity
+    \item GVHD (graft-versus-host disease): \$200M market for oral CsA alternatives
+    \item Transplant immunosuppression: \$2B+ total CsA market
+\end{itemize}
+
+\subsection{Regulatory Strategy}
+
+\textbf{FDA Pathway: 505(b)(2) New Drug Application (NDA)}
+
+\textbf{Rationale:}
+\begin{itemize}[leftmargin=*]
+    \item CsA is approved (extensive safety/efficacy data exists from Neoral, Sandimmune)
+    \item We are changing the delivery system, not the active ingredient
+    \item Can reference prior CsA approvals for some safety data
+    \item Must demonstrate: (i) pharmaceutical equivalence (same drug, oral form), (ii) clinical superiority OR bioequivalence, (iii) safety of novel excipients (PLGA is FDA-approved; PDEVs = food-grade)
+\end{itemize}
+
+\textbf{Development Timeline:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Phase I SBIR (Year 1):} Formulation optimization + preclinical POC (mice)
+    \item \textbf{Phase II SBIR (Years 2--3):} GLP toxicology (28-day rodent + non-rodent) + CMC scale-up + IND preparation
+    \item \textbf{Pre-IND meeting (Month 18):} FDA feedback on clinical trial design, CMC requirements
+    \item \textbf{IND filing (Month 30):} Investigational New Drug application
+    \item \textbf{Phase IIa clinical trial (Years 3--4):} 24 ASUC patients, single-arm, proof-of-concept (clinical response + PK)
+    \item \textbf{Phase IIb (Years 4--5):} 120 patients, randomized, active-controlled (vs. standard IV CsA), non-inferiority + safety advantage
+    \item \textbf{NDA filing (Year 6):} 505(b)(2) submission
+    \item \textbf{Approval (Year 7):} Launch product
+\end{itemize}
+
+\subsection{Intellectual Property Strategy}
+
+\textbf{Patent Portfolio Plan:}
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Provisional patent (Month 1):} File immediately with prophetic examples (no data required)
+    \begin{itemize}
+        \item Title: ``Triple-Gated Plant Extracellular Vesicle--PLGA Nanoparticle Platform''
+        \item Claims: Composition (PDEV + PLGA + PLA2 linker), treatment method, manufacturing process
+    \end{itemize}
+
+    \item \textbf{Full utility patent (Month 12):} Convert provisional with real data from Phase I SBIR
+    \begin{itemize}
+        \item Geographic coverage: US, EU (EPO), Canada, Japan, China, Brazil
+        \item Patent life: 20 years from filing = 2045 expiration (if filed 2025)
+    \end{itemize}
+
+    \item \textbf{Continuation-in-part (CIP, Year 2):} Add new claims based on Phase II data
+    \begin{itemize}
+        \item Specific linker structures (after testing 3--5 variants)
+        \item Optimal PLGA formulations (LA:GA ratio, MW)
+        \item Clinical dosing regimens
+    \end{itemize}
+
+    \item \textbf{Use patent (Year 3):} Therapeutic method claims
+    \begin{itemize}
+        \item Treatment of ASUC achieving $<$50\% systemic exposure
+        \item Combination therapy (PDEV-PLGA-CsA + biologics)
+    \end{itemize}
+\end{enumerate}
+
+\textbf{Freedom-to-Operate (FTO):}
+\begin{itemize}[leftmargin=*]
+    \item Preliminary search: No blocking patents identified for the specific combination of PLGA NPs + plant EVs + PLA2 linkers
+    \item Watch list: Mammalian EV-PLGA hybrids (different carrier type); PLA2-prodrugs (different activation mechanism); plant EV carriers (single-level system)
+    \item Our differentiation: \textbf{Triple-gated architecture} is novel; integration of three independent technologies
+\end{itemize}
+
+\subsection{Licensing and Partnership Strategy}
+
+\textbf{Target Partners:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Mid-size pharma with GI portfolio:} Takeda (Entyvio for UC), Ferring (European GI leader), AbbVie (Rinvoq, Skyrizi for IBD)
+    \item \textbf{Generic pharma with specialty focus:} Dr. Reddy's, Amneal, Teva (seeking differentiated CsA products)
+\end{itemize}
+
+\textbf{Deal Structure:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Stage 1 (After Phase I):} Option agreement (\$500K--1M for 12-month exclusive evaluation)
+    \item \textbf{Stage 2 (After IND filing or Phase IIa):} Full license
+    \begin{itemize}
+        \item Upfront: \$5M--15M (higher if clinical data available)
+        \item Milestones: \$50M--80M total (\$5M IND clearance, \$10M Phase IIa, \$15M Phase IIb, \$20M NDA approval, \$30M+ sales milestones)
+        \item Royalties: 5--10\% of net sales (tiered)
+    \end{itemize}
+    \item \textbf{Total deal value:} \$80M--120M (including milestones + early royalties)
+\end{itemize}
+
+\textbf{Platform Licensing (Years 5--10):}
+Beyond CsA, license the triple-gated platform for:
+\begin{itemize}[leftmargin=*]
+    \item Tacrolimus + MMP-cleavable linkers (GVHD, transplant)
+    \item Cannabinoids + cathepsin-cleavable linkers (pain, GI motility disorders)
+    \item Anti-inflammatory peptides + elastase-cleavable linkers (pancreatitis)
+\end{itemize}
+
+Each new drug-enzyme pair = separate licensing deal (\$5M--10M per indication).
+
+\newpage
+
+% Section 8: Conclusion
+\section{Conclusion}
+
+This invention establishes a \textbf{new paradigm in oral drug delivery} by integrating natural (plant EV) and synthetic (PLGA) nanotechnologies with molecular-level activation triggers (PLA2-cleavable linkers). The triple-gated control mechanism---GI protection, inflammation-responsive release, and sustained local kinetics---addresses the fundamental challenge of delivering potent immunosuppressants like cyclosporine A to diseased tissue while minimizing systemic toxicity.
+
+\textbf{Key advantages:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Novel architecture:} First integration of PLGA + plant EVs + enzyme-cleavable linkers (no prior art identified)
+    \item \textbf{Superior therapeutic index:} Preclinical projections indicate $>$50\% reduction in systemic exposure with equivalent or better efficacy
+    \item \textbf{Scalable manufacturing:} Plant EVs from citrus juice waste (\$0.10--0.50/dose); established PLGA production
+    \item \textbf{Regulatory advantage:} 505(b)(2) pathway (faster approval, lower cost than new molecular entity)
+    \item \textbf{Platform extensibility:} Applicable to multiple drugs, enzymes, and diseases
+\end{itemize}
+
+We recommend:
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Immediate filing of provisional patent} to establish priority date
+    \item \textbf{SBIR Phase I application within 4--6 weeks} (with this disclosure as supporting material)
+    \item \textbf{Preliminary data generation (8--10 weeks):} CsA-PLGA formulation, PDEV isolation, hybrid assembly, in vitro PLA2-triggered release
+\end{enumerate}
+
+This invention has the potential to transform treatment of inflammatory bowel disease and establish plant EV-based platforms as a commercially viable class of oral nanomedicines.
+
+\vspace{1cm}
+\hrule
+\vspace{0.3cm}
+
+\noindent\textbf{Inventors' Signatures:}\\[0.5cm]
+\noindent\rule{6cm}{0.4pt} \hspace{1cm} Date: \rule{3cm}{0.4pt}\\
+Maria Beatriz Herrera Sanchez, PhD\\
+ExoVitae Lab\\[0.5cm]
+
+\noindent\rule{6cm}{0.4pt} \hspace{1cm} Date: \rule{3cm}{0.4pt}\\
+[Co-Inventor Name], PhD\\
+
+\end{document}

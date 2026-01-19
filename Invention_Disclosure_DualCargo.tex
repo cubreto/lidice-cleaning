@@ -1,0 +1,450 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{times}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{bold-extra}
+\usepackage[parfill]{parskip}
+\usepackage{xcolor}
+
+% Formatting
+\setlength{\parindent}{0pt}
+\setstretch{1.15}
+
+\begin{document}
+
+% Title Page
+\begin{center}
+{\Huge \textbf{INVENTION DISCLOSURE}}\\[0.5cm]
+{\Large Dual-Cargo Plant Extracellular Vesicles for\\Programmable Oral Immunosuppression}\\[1cm]
+
+\begin{tabular}{ll}
+\textbf{Inventors:} & [Beatriz Name], PhD\\
+& [Your Name], PhD\\[0.3cm]
+\textbf{Institution:} & [Company / University Name]\\[0.3cm]
+\textbf{Date:} & \today\\[0.3cm]
+\textbf{Status:} & Confidential -- For Patent Counsel Review\\
+\end{tabular}
+\end{center}
+
+\vspace{1cm}
+\hrule
+\vspace{0.5cm}
+
+\tableofcontents
+\newpage
+
+% Section 1: Executive Summary
+\section{Executive Summary}
+
+\subsection{One-Line Description}
+\textbf{A class of plant-derived extracellular vesicles that co-deliver cyclosporine A (or similar hydrophobic immunosuppressants) together with immunomodulatory nucleic acids (miRNA/siRNA/ASO/mRNA), enabling deeper, more targeted immune control at lower drug doses.}
+
+\subsection{Key Innovation}
+This invention transforms plant extracellular vesicles (EVs) from passive drug carriers into \textbf{programmable, bi-modal immunosuppressive platforms} by:
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Co-encapsulating two distinct therapeutic modalities:} A hydrophobic small molecule (CsA) in the lipid membrane + immunomodulatory nucleic acid in the EV lumen.
+    \item \textbf{Achieving synergistic immunosuppression:} Targeting complementary pathways (calcineurin inhibition + transcriptional/post-transcriptional regulation) to enable dose reduction and improved safety.
+    \item \textbf{Maintaining food-grade, scalable manufacturing:} Using waste streams from juice processing (citrus, grape, ginger) as EV source.
+\end{enumerate}
+
+\subsection{Differentiation from Prior Art}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Prior work on plant EVs:} Single-cargo delivery (drug OR nucleic acid, not both).
+    \item \textbf{Prior work on CsA formulations:} Synthetic carriers (polymers, liposomes) without biological targeting or synergistic co-cargo.
+    \item \textbf{Our invention:} First dual-cargo plant EV platform; first rational pairing of small-molecule immunosuppressant with pathway-specific nucleic acid.
+\end{itemize}
+
+\subsection{Target Applications}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Primary:} Acute severe ulcerative colitis (ASUC) -- 75,000 cases/year in US/EU, high unmet need.
+    \item \textbf{Secondary:} Crohn's disease, graft-versus-host disease, organ transplant rejection, psoriasis.
+    \item \textbf{Platform potential:} Extensible to other drug-nucleic acid pairs (tacrolimus, sirolimus, cannabinoids).
+\end{itemize}
+
+\newpage
+
+% Section 2: Detailed Invention Description
+\section{Detailed Invention Description}
+
+\subsection{Background and Unmet Need}
+
+\subsubsection{Cyclosporine A (CsA) in Inflammatory Bowel Disease}
+Cyclosporine A is a potent calcineurin inhibitor widely used in transplantation and severe autoimmune/inflammatory diseases. In acute severe ulcerative colitis (ASUC), intravenous CsA achieves 60--80\% response rates as rescue therapy for patients failing corticosteroids. However, systemic toxicity limits its use:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Nephrotoxicity:} 20--40\% of patients develop renal impairment.
+    \item \textbf{Neurotoxicity:} Tremor, paresthesias, seizures in 5--10\%.
+    \item \textbf{Narrow therapeutic window:} Requires frequent drug monitoring.
+    \item \textbf{Poor oral bioavailability:} Erratic absorption, food effects.
+\end{itemize}
+
+Current oral formulations (Neoral, Gengraf) are microemulsions that improve absorption but do not achieve gut-specific targeting, resulting in high systemic exposure.
+
+\subsubsection{Nucleic Acid Therapeutics for Immune Modulation}
+Antisense oligonucleotides (ASOs), siRNAs, and miRNA mimics/inhibitors can precisely modulate immune pathways (e.g., suppress IL-2, TNF-$\alpha$, IL-17; enhance FOXP3/Tregs). However, oral delivery is severely limited by:
+\begin{itemize}[leftmargin=*]
+    \item Rapid degradation by nucleases in GI tract.
+    \item Poor epithelial permeability (hydrophilic, anionic).
+    \item Off-target effects in non-diseased tissues.
+\end{itemize}
+
+No approved oral nucleic acid therapeutic exists for IBD.
+
+\subsubsection{Plant Extracellular Vesicles (PDEVs) as Carriers}
+Plant-derived EVs are naturally occurring nanoparticles (50--200 nm) secreted by plant cells. Citrus, grapefruit, ginger, and grape EVs have been shown to:
+\begin{itemize}[leftmargin=*]
+    \item Survive gastric pH and proteolytic enzymes.
+    \item Cross intestinal epithelial barriers.
+    \item Deliver bioactive cargo (proteins, lipids, nucleic acids) to mammalian cells.
+    \item Exhibit low immunogenicity and GRAS (Generally Recognized As Safe) status potential.
+\end{itemize}
+
+However, \textbf{no prior work has systematically engineered PDEVs to co-deliver hydrophobic drugs and nucleic acids simultaneously}, nor designed synergistic drug-nucleic acid pairs for specific diseases.
+
+\subsection{Inventive Concept}
+
+\subsubsection{Core Innovation: Dual-Cargo Architecture}
+We engineer plant EVs to simultaneously carry:
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Hydrophobic small molecule (CsA):} Inserted into the lipid bilayer membrane via temperature-controlled passive loading (``Gentle Fusion'' protocol).
+    \item \textbf{Immunomodulatory nucleic acid:} Encapsulated in the EV lumen or associated with the inner membrane leaflet via electroporation, lipid-mediated transfection, or cationic polymer complexation.
+\end{enumerate}
+
+This dual-cargo system enables:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Orthogonal loading mechanisms:} Membrane-based loading for lipophilic drugs; active loading for nucleic acids.
+    \item \textbf{Independent dose optimization:} CsA and nucleic acid ratios can be tuned for maximal synergy.
+    \item \textbf{Compartmentalized release:} CsA releases via membrane diffusion in target tissue; nucleic acid releases upon EV internalization and endosomal escape.
+\end{itemize}
+
+\subsubsection{Rational Selection of Nucleic Acid Payloads}
+For ASUC, we select nucleic acids targeting pathogenic immune pathways:
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{|l|p{6cm}|p{5cm}|}
+\hline
+\textbf{Target} & \textbf{Nucleic Acid Modality} & \textbf{Rationale} \\
+\hline
+IL-2 mRNA & Antisense oligonucleotide (ASO) & Suppress T-cell activation synergistically with CsA (which blocks IL-2 transcription via NFAT inhibition). \\
+\hline
+TNF-$\alpha$ mRNA & siRNA or ASO & Reduce epithelial/macrophage inflammation; complement CsA's T-cell effect. \\
+\hline
+IL-17A/F & siRNA & Target Th17 pathway (not affected by calcineurin inhibitors). \\
+\hline
+FOXP3 & mRNA or miRNA mimic & Expand regulatory T cells (Tregs), enhancing immunosuppression while potentially reducing CsA dose. \\
+\hline
+\end{tabular}
+\caption{Candidate nucleic acid payloads for dual-cargo PDEV-CsA formulations.}
+\end{table}
+
+\subsubsection{Synergistic Mechanism of Action}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{CsA:} Inhibits calcineurin $\rightarrow$ blocks NFAT nuclear translocation $\rightarrow$ suppresses IL-2 transcription and T-cell activation.
+    \item \textbf{Anti-IL-2 ASO:} Degrades IL-2 mRNA post-transcriptionally, providing a second layer of IL-2 blockade.
+    \item \textbf{Net effect:} Deeper IL-2 suppression at lower CsA dose, reducing systemic exposure and toxicity.
+\end{itemize}
+
+Alternative combinations (e.g., CsA + anti-TNF siRNA) target \textbf{complementary pathways}, achieving broader immunosuppression.
+
+\newpage
+
+% Section 3: Detailed Manufacturing Method
+\section{Detailed Manufacturing Method}
+
+\subsection{Step 1: Plant EV Isolation}
+
+\textbf{Source Material:} Fresh-pressed juice from edible plants (citrus, grapefruit, ginger, grape). Prioritize industrial waste streams for cost efficiency.
+
+\textbf{Isolation Protocol:}
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Clarification:} Centrifuge juice at 500$\times$g (10 min) $\rightarrow$ 2,000$\times$g (20 min) $\rightarrow$ 10,000$\times$g (30 min) to remove cells, debris, and large vesicles.
+    \item \textbf{EV purification:} Apply supernatant to size-exclusion chromatography (SEC) columns (e.g., qEV, Izon Science) or tangential flow filtration (TFF) with 100--300 kDa MWCO.
+    \item \textbf{Concentration:} Collect EV-enriched fractions; concentrate via TFF or ultracentrifugation (100,000$\times$g, 90 min).
+    \item \textbf{Quality control:} Measure particle concentration (NTA), size distribution (DLS), protein content (BCA), EV markers (Western blot: CD63, TSG101).
+\end{enumerate}
+
+\textbf{Yield:} $\sim$50--200 $\mu$g EV protein per mL juice; $\sim$10$^{10}$--10$^{11}$ particles per mL.
+
+\subsection{Step 2: CsA Loading (``Gentle Fusion'' Protocol)}
+
+\textbf{Rationale:} Maximize CsA encapsulation in the lipid membrane while preserving EV integrity and native cargo (flavonoids, proteins).
+
+\textbf{Protocol:}
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Pre-activation:} Incubate purified EVs at 37°C for 15 min to increase membrane fluidity.
+    \item \textbf{CsA introduction:}
+    \begin{itemize}[leftmargin=*]
+        \item Prepare CsA stock in ethanol (10 mg/mL).
+        \item Add dropwise to EV suspension (final ethanol concentration: 2--5\% v/v; CsA:EV ratio: 1:2.5 to 1:10 w/w).
+        \item Maintain 37°C for 30 min with gentle rotation (10 rpm).
+    \end{itemize}
+    \item \textbf{Membrane annealing:} Rapidly cool to 4°C (5 min ice bath) to ``lock'' CsA into membrane.
+    \item \textbf{Purification:} Remove free CsA via SEC or ultracentrifugation (100,000$\times$g, 90 min, 4°C); wash pellet once.
+    \item \textbf{Characterization:}
+    \begin{itemize}[leftmargin=*]
+        \item Encapsulation efficiency (EE\%): quantify CsA in purified EVs by LC-MS/MS; EE\% = (CsA in EVs / CsA added) $\times$ 100.
+        \item Target: EE\% $\geq$ 60\%; loading capacity $\geq$ 50 $\mu$g CsA/mg EV protein.
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Step 3: Nucleic Acid Loading}
+
+\textbf{Method A: Electroporation} (preferred for robustness)
+\begin{enumerate}[leftmargin=*]
+    \item Resuspend CsA-loaded EVs in low-conductivity buffer (e.g., 0.5$\times$ PBS or sucrose buffer).
+    \item Add nucleic acid (ASO, siRNA, miRNA mimic) to EV suspension (molar ratio: 1:100 to 1:1000 nucleic acid:EV).
+    \item Electroporate: 400 V, 125 $\mu$F, 2-mm cuvette (exponential decay pulse).
+    \item Incubate 30 min at room temperature (allow membrane resealing).
+    \item Purify via SEC or ultracentrifugation to remove free nucleic acid.
+\end{enumerate}
+
+\textbf{Method B: Lipid-Mediated Transfection}
+\begin{enumerate}[leftmargin=*]
+    \item Complex nucleic acid with cationic lipid (e.g., DOTAP, Lipofectamine) at 1:3 molar ratio.
+    \item Incubate lipoplexes with CsA-loaded EVs for 1--2 h at 37°C.
+    \item Purify as above.
+\end{enumerate}
+
+\textbf{Characterization:}
+\begin{itemize}[leftmargin=*]
+    \item Nucleic acid loading: quantify by qPCR (copies per $10^9$ EVs) or fluorescence (if labeled). Target: $>$10$^4$ copies per $10^9$ EVs.
+    \item Integrity: Assess size, zeta potential post-loading (expect slight increase in size [10--20 nm], shift in zeta toward neutral/positive).
+\end{itemize}
+
+\subsection{Step 4: Formulation and Stabilization}
+
+\textbf{Lyoprotectant Addition:} Add trehalose or sucrose (5--10\% w/v) to protect EVs during storage or lyophilization.
+
+\textbf{Final Formulation:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Liquid:} Store at 4°C (use within 4 weeks) or $-80$°C (long-term).
+    \item \textbf{Lyophilized:} Freeze-dry for room-temperature storage; reconstitute with water before use.
+\end{itemize}
+
+\textbf{Quality Release Criteria:}
+\begin{itemize}[leftmargin=*]
+    \item CsA content: 90--110\% of label claim (HPLC/LC-MS).
+    \item Nucleic acid content: $\geq$80\% of target loading (qPCR).
+    \item Particle size: 80--250 nm (NTA).
+    \item Sterility and endotoxin: USP <71>, <85> compliant (for clinical use).
+\end{itemize}
+
+\newpage
+
+% Section 4: Patentable Claims
+\section{Patentable Claims (Draft for Counsel)}
+
+\subsection{Independent Claim 1: Composition of Matter}
+
+\textbf{Claim 1.} A pharmaceutical composition comprising:
+\begin{enumerate}[label=(\alph*),leftmargin=*]
+    \item extracellular vesicles derived from an edible plant source;
+    \item a hydrophobic calcineurin inhibitor associated with a membrane of the extracellular vesicles; and
+    \item at least one immunomodulatory nucleic acid encapsulated within the extracellular vesicles or associated with an inner leaflet of the membrane,
+\end{enumerate}
+wherein the immunomodulatory nucleic acid modulates expression or activity of an immune-related target selected from the group consisting of interleukin-2 (IL-2), tumor necrosis factor-alpha (TNF-$\alpha$), interferon-gamma (IFN-$\gamma$), interleukin-17 (IL-17), forkhead box P3 (FOXP3), nuclear factor of activated T-cells (NFAT), and nuclear factor-kappa B (NF-$\kappa$B).
+
+\subsection{Dependent Claims (Examples)}
+
+\textbf{Claim 2.} The composition of Claim 1, wherein the edible plant source is selected from the group consisting of \textit{Citrus sinensis} (sweet orange), \textit{Citrus paradisi} (grapefruit), \textit{Citrus limon} (lemon), \textit{Citrus bergamia} (bergamot), \textit{Zingiber officinale} (ginger), and \textit{Vitis vinifera} (grape).
+
+\textbf{Claim 3.} The composition of Claim 1, wherein the hydrophobic calcineurin inhibitor is cyclosporine A, tacrolimus, pimecrolimus, or a pharmaceutically acceptable salt thereof.
+
+\textbf{Claim 4.} The composition of Claim 1, wherein the immunomodulatory nucleic acid is an antisense oligonucleotide (ASO), small interfering RNA (siRNA), microRNA mimic, microRNA inhibitor, or messenger RNA (mRNA).
+
+\textbf{Claim 5.} The composition of Claim 1, wherein the immunomodulatory nucleic acid targets IL-2 mRNA for degradation.
+
+\textbf{Claim 6.} The composition of Claim 1, wherein:
+\begin{enumerate}[label=(\alph*),leftmargin=*]
+    \item the mass ratio of cyclosporine A to immunomodulatory nucleic acid is between 10:1 and 1000:1; and
+    \item the extracellular vesicles have a mean diameter between 50 nm and 300 nm.
+\end{enumerate}
+
+\textbf{Claim 7.} The composition of Claim 1, wherein the extracellular vesicles retain at least 40\% of endogenous bioactive compounds present in the plant source, selected from flavonoids, polyphenols, and terpenes.
+
+\subsection{Independent Claim 2: Method of Treatment}
+
+\textbf{Claim 8.} A method of treating an immune-mediated disease in a subject in need thereof, comprising orally administering to the subject an effective amount of the composition of Claim 1, wherein the immune-mediated disease is selected from the group consisting of ulcerative colitis, Crohn's disease, acute severe ulcerative colitis (ASUC), graft-versus-host disease, organ transplant rejection, psoriasis, rheumatoid arthritis, and multiple sclerosis.
+
+\textbf{Claim 9.} The method of Claim 8, wherein the oral administration achieves:
+\begin{enumerate}[label=(\alph*),leftmargin=*]
+    \item a plasma area-under-the-curve (AUC) of the calcineurin inhibitor that is less than 70\% of the AUC achieved by an equivalent oral dose of free calcineurin inhibitor; and
+    \item a tissue concentration of the calcineurin inhibitor in the colon that is at least 2-fold higher than the tissue concentration achieved by free calcineurin inhibitor.
+\end{enumerate}
+
+\subsection{Independent Claim 3: Method of Manufacture}
+
+\textbf{Claim 10.} A method of producing a dual-cargo pharmaceutical composition, comprising:
+\begin{enumerate}[label=(\alph*),leftmargin=*]
+    \item isolating extracellular vesicles from an edible plant material by differential centrifugation and size-exclusion chromatography;
+    \item contacting the extracellular vesicles with cyclosporine A in the presence of 2--5\% (v/v) ethanol at 37°C for 20--40 minutes, followed by rapid cooling to 4°C, to load cyclosporine A into a membrane of the extracellular vesicles;
+    \item removing unencapsulated cyclosporine A by size-exclusion chromatography or ultracentrifugation;
+    \item introducing an immunomodulatory nucleic acid into the extracellular vesicles by electroporation or lipid-mediated transfection; and
+    \item removing free nucleic acid by purification,
+\end{enumerate}
+thereby obtaining extracellular vesicles co-encapsulating cyclosporine A and the immunomodulatory nucleic acid.
+
+\textbf{Claim 11.} The method of Claim 10, wherein the encapsulation efficiency of cyclosporine A is at least 60\%, and the loading of immunomodulatory nucleic acid is at least 10$^4$ copies per 10$^9$ extracellular vesicles.
+
+\newpage
+
+% Section 5: Prophetic Examples
+\section{Prophetic Examples}
+
+\subsection{Example 1: Isolation and Characterization of Citrus EVs}
+
+\textbf{Procedure:} Fresh sweet orange juice (2 L, organic) was subjected to sequential centrifugation (500$\times$g for 10 min, 2,000$\times$g for 20 min, 10,000$\times$g for 30 min) to remove pulp, cells, and debris. The clarified supernatant was applied to qEV size-exclusion columns (Izon Science, 70 nm separation). Fractions 7--9 were collected, pooled, and concentrated using 100 kDa MWCO spin filters.
+
+\textbf{Expected Results:}
+\begin{itemize}[leftmargin=*]
+    \item Yield: 150 $\mu$g EV protein per mL juice; $\sim$5 $\times$ 10$^{10}$ particles/mL (NTA).
+    \item Size: Mean diameter 120 $\pm$ 35 nm; polydispersity index (PDI) $<$ 0.25.
+    \item Morphology: TEM imaging shows cup-shaped vesicles with intact bilayer membranes.
+    \item Markers: Western blot positive for CD63, TSG101 (enriched vs. crude juice).
+    \item Bioactive cargo: HPLC detects hesperidin (28 $\pm$ 6 $\mu$g/mg EV protein) and naringenin (12 $\pm$ 3 $\mu$g/mg).
+\end{itemize}
+
+\subsection{Example 2: CsA Loading via Gentle Fusion Protocol}
+
+\textbf{Procedure:} Citrus EVs (1 mg protein) were pre-warmed to 37°C for 15 min. CsA (200 $\mu$g in 20 $\mu$L ethanol) was added dropwise with gentle swirling (final ethanol: 2\% v/v; CsA:EV ratio 1:5 w/w). The mixture was incubated at 37°C for 30 min, then rapidly cooled on ice for 5 min. Free CsA was removed by qEV column purification. CsA content in purified EVs was quantified by LC-MS/MS.
+
+\textbf{Expected Results:}
+\begin{itemize}[leftmargin=*]
+    \item Encapsulation efficiency: 68 $\pm$ 5\% (n=3 batches).
+    \item Loading capacity: 136 $\mu$g CsA per mg EV protein.
+    \item Size: Increase from 120 nm to 135 nm post-loading; PDI remains $<$ 0.3.
+    \item EV integrity: CD63 retention $>$ 90\% vs. empty EVs (Western blot).
+    \item Stability: $>$ 90\% CsA retained at 4°C for 28 days.
+\end{itemize}
+
+\subsection{Example 3: Dual-Cargo Loading (CsA + Anti-IL-2 ASO)}
+
+\textbf{Procedure:} CsA-loaded citrus EVs (from Example 2) were resuspended in 0.5$\times$ PBS. Anti-IL-2 antisense oligonucleotide (ASO, 20-mer 2'-O-methyl phosphorothioate) was added at 1:500 molar ratio (ASO:EV). Electroporation was performed (400 V, 125 $\mu$F, 2-mm cuvette). After 30 min recovery, free ASO was removed by SEC. ASO loading was quantified by qPCR.
+
+\textbf{Expected Results:}
+\begin{itemize}[leftmargin=*]
+    \item ASO loading: 2.5 $\times$ 10$^4$ copies per 10$^9$ EVs.
+    \item CsA retention: $>$ 85\% of pre-electroporation CsA content (minimal leakage).
+    \item Size: 145 nm (slight increase due to ASO); zeta potential shifts from $-$20 mV to $-$10 mV.
+    \item Dual-cargo stability: $>$ 80\% of both CsA and ASO retained at 4°C for 14 days.
+\end{itemize}
+
+\subsection{Example 4: In Vitro Synergistic T-Cell Suppression}
+
+\textbf{Procedure:} Human PBMCs were activated with anti-CD3/CD28 beads and treated with: (1) vehicle, (2) free CsA (50 ng/mL), (3) CsA-EVs (50 ng/mL CsA-equivalent), (4) ASO-EVs (no CsA), (5) dual-cargo EVs (25 ng/mL CsA + ASO). IL-2 secretion was measured by ELISA at 48 h. Synergy was assessed using Bliss independence model.
+
+\textbf{Expected Results:}
+\begin{itemize}[leftmargin=*]
+    \item Free CsA (50 ng/mL): 48 $\pm$ 6\% IL-2 suppression.
+    \item CsA-EVs (50 ng/mL): 55 $\pm$ 7\% suppression (enhanced delivery).
+    \item ASO-EVs: 22 $\pm$ 5\% suppression (modest effect alone).
+    \item \textbf{Dual-cargo EVs (25 ng/mL CsA):} 72 $\pm$ 8\% suppression.
+    \item Combination index: 0.65 (synergy; threshold for synergy $<$ 0.9).
+    \item Interpretation: Dual-cargo achieves greater suppression at \textbf{half the CsA dose}.
+\end{itemize}
+
+\subsection{Example 5: In Vivo Efficacy in DSS Colitis Model (Conceptual)}
+
+\textbf{Study Design:} C57BL/6 mice (n=10/group) receive 2.5\% DSS in drinking water for 7 days. On days 3--7, mice are orally gavaged with: (1) vehicle, (2) free CsA (10 mg/kg), (3) CsA-EVs (10 mg/kg CsA-equivalent), (4) dual-cargo EVs (5 mg/kg CsA + ASO).
+
+\textbf{Expected Results:}
+\begin{itemize}[leftmargin=*]
+    \item Disease activity index (DAI, day 8):
+    \begin{itemize}[leftmargin=*]
+        \item Vehicle: 8.2 $\pm$ 1.1
+        \item Free CsA: 4.5 $\pm$ 0.9 (45\% reduction)
+        \item CsA-EVs: 4.0 $\pm$ 0.8 (51\% reduction; improved over free CsA)
+        \item \textbf{Dual-cargo EVs: 3.2 $\pm$ 0.7 (61\% reduction; superior efficacy at half-dose)}
+    \end{itemize}
+    \item Plasma CsA AUC (0--6h):
+    \begin{itemize}[leftmargin=*]
+        \item Free CsA (10 mg/kg): 3,200 ng$\cdot$h/mL
+        \item CsA-EVs (10 mg/kg): 2,100 ng$\cdot$h/mL (34\% lower)
+        \item \textbf{Dual-cargo EVs (5 mg/kg): 1,100 ng$\cdot$h/mL (66\% lower)}
+    \end{itemize}
+    \item Colonic CsA concentration (terminal, $\mu$g/g tissue):
+    \begin{itemize}[leftmargin=*]
+        \item Free CsA: 12 $\pm$ 3
+        \item CsA-EVs: 28 $\pm$ 6 (2.3-fold higher)
+        \item Dual-cargo EVs: 22 $\pm$ 5 (1.8-fold higher; reduced dose but still gut-targeted)
+    \end{itemize}
+    \item Nephrotoxicity (serum creatinine, mg/dL):
+    \begin{itemize}[leftmargin=*]
+        \item Vehicle: 0.25 $\pm$ 0.05
+        \item Free CsA: 0.42 $\pm$ 0.08 (68\% increase)
+        \item CsA-EVs: 0.35 $\pm$ 0.06 (40\% increase)
+        \item \textbf{Dual-cargo EVs: 0.28 $\pm$ 0.05 (12\% increase; not significant)}
+    \end{itemize}
+    \item Interpretation: Dual-cargo EVs achieve superior efficacy with minimal systemic toxicity by enabling dose reduction via synergistic mechanism.
+\end{itemize}
+
+\newpage
+
+% Section 6: Commercial and Regulatory Strategy
+\section{Commercial and Regulatory Strategy}
+
+\subsection{Target Market}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Primary:} Acute severe ulcerative colitis (ASUC) rescue therapy -- 75,000 cases/year (US/EU), \$50--100M market.
+    \item \textbf{Secondary:} Maintenance IBD therapy (if long-term safety demonstrated) -- \$500M+ market.
+    \item \textbf{Tertiary:} Transplantation, GVHD, psoriasis -- \$2B+ total CsA market.
+\end{itemize}
+
+\subsection{Regulatory Path}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{FDA 505(b)(2) NDA:} Leverage existing CsA safety data; demonstrate improved PK/safety profile.
+    \item \textbf{GRAS status:} Seek affirmation for citrus EVs as food-grade excipient.
+    \item \textbf{Timeline:} Phase I SBIR (Year 1) $\rightarrow$ Phase II (Years 2--3, IND-enabling) $\rightarrow$ Phase IIa clinical (Year 4) $\rightarrow$ NDA filing (Year 6).
+\end{itemize}
+
+\subsection{Licensing/Partnership Strategy}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Stage 1:} Option agreement with pharma partner after Phase I SBIR (\$500K--1M).
+    \item \textbf{Stage 2:} Full license after IND filing (\$5--15M upfront + \$50--80M milestones + 5--10\% royalties).
+    \item \textbf{Target partners:} Takeda, AbbVie, Pfizer, Ferring (companies with IBD portfolios).
+\end{itemize}
+
+\subsection{Platform Extension}
+Beyond CsA, the dual-cargo platform can be adapted for:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Tacrolimus + anti-TNF siRNA} (transplant rejection, GVHD)
+    \item \textbf{Cannabinoids + anti-inflammatory miRNAs} (IBD pain management)
+    \item \textbf{Curcumin + FOXP3 mRNA} (cancer prevention, autoimmunity)
+\end{itemize}
+
+Each new drug-nucleic acid pair represents a separate licensing opportunity (\$5--10M per indication).
+
+\newpage
+
+% Section 7: Conclusion
+\section{Conclusion}
+
+This invention establishes a \textbf{new class of oral nanomedicines} that combine the advantages of plant-derived extracellular vesicles (biocompatibility, scalability, GRAS status) with programmable, synergistic co-delivery of small molecules and nucleic acids. By rationally pairing cyclosporine A with immunomodulatory nucleic acids targeting complementary pathways, we achieve:
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Enhanced efficacy} via synergistic multi-pathway suppression.
+    \item \textbf{Improved safety} through CsA dose reduction and gut-targeted delivery.
+    \item \textbf{Platform scalability} enabling extension to multiple drug-disease pairs.
+\end{itemize}
+
+We recommend filing a provisional patent application immediately to establish priority, followed by SBIR Phase I grant application within 4--6 weeks. Preliminary data (plant EV characterization, CsA loading, dual-cargo feasibility) can be generated within 8--10 weeks to strengthen the full utility patent and Phase II SBIR proposal.
+
+\vspace{1cm}
+\hrule
+\vspace{0.3cm}
+
+\noindent\textbf{Inventors' Signatures:}\\[0.5cm]
+\noindent\rule{6cm}{0.4pt} \hspace{1cm} Date: \rule{3cm}{0.4pt}\\
+[Beatriz Name], PhD\\[0.5cm]
+
+\noindent\rule{6cm}{0.4pt} \hspace{1cm} Date: \rule{3cm}{0.4pt}\\
+[Your Name], PhD\\
+
+\end{document}
