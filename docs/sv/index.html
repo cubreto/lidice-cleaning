@@ -95,12 +95,42 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="container">
-                <div class="hero-content">
-                    <h1>Professionella Stadtjanster i Stockholm</h1>
-                    <p class="hero-subtitle">Miljovanlig Hem- och Skolstadning Du Kan Lita Pa</p>
-                    <div class="hero-actions">
-                        <a href="offert.html" class="btn btn-primary btn-lg">Fa en Gratis Offert</a>
-                        <p class="hero-phone">Eller ring <a href="tel:+46 73 534 4533">+46 73 534 4533</a></p>
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <h1>Professionella Stadtjanster i Stockholm</h1>
+                        <p class="hero-subtitle">Miljovanlig Hem- och Skolstadning Du Kan Lita Pa</p>
+                        <div class="hero-actions">
+                            <a href="offert.html" class="btn btn-primary btn-lg">Fa en Gratis Offert</a>
+                            <p class="hero-phone">Eller ring <a href="tel:+46 73 534 4533">+46 73 534 4533</a></p>
+                        </div>
+                    </div>
+                    <div class="hero-illustration">
+                        <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- House -->
+                            <path d="M200 40L320 120V260H80V120L200 40Z" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+                            <path d="M200 40L80 120H320L200 40Z" fill="#bbf7d0"/>
+                            <!-- Door -->
+                            <rect x="175" y="180" width="50" height="80" fill="#16a34a" rx="4"/>
+                            <circle cx="215" cy="220" r="4" fill="#fbbf24"/>
+                            <!-- Windows -->
+                            <rect x="105" y="140" width="45" height="50" fill="#bfdbfe" stroke="#16a34a" stroke-width="2" rx="2"/>
+                            <rect x="250" y="140" width="45" height="50" fill="#bfdbfe" stroke="#16a34a" stroke-width="2" rx="2"/>
+                            <line x1="127" y1="140" x2="127" y2="190" stroke="#16a34a" stroke-width="2"/>
+                            <line x1="105" y1="165" x2="150" y2="165" stroke="#16a34a" stroke-width="2"/>
+                            <line x1="272" y1="140" x2="272" y2="190" stroke="#16a34a" stroke-width="2"/>
+                            <line x1="250" y1="165" x2="295" y2="165" stroke="#16a34a" stroke-width="2"/>
+                            <!-- Sparkles -->
+                            <path d="M340 80L345 95L360 100L345 105L340 120L335 105L320 100L335 95L340 80Z" fill="#fbbf24"/>
+                            <path d="M60 140L63 150L73 153L63 156L60 166L57 156L47 153L57 150L60 140Z" fill="#fbbf24"/>
+                            <path d="M350 180L352 186L358 188L352 190L350 196L348 190L342 188L348 186L350 180Z" fill="#fbbf24"/>
+                            <!-- Plant/Tree -->
+                            <ellipse cx="50" cy="250" rx="30" ry="35" fill="#22c55e"/>
+                            <rect x="45" y="250" width="10" height="30" fill="#92400e"/>
+                            <!-- Cleaning bubbles -->
+                            <circle cx="360" cy="240" r="12" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+                            <circle cx="345" cy="255" r="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+                            <circle cx="370" cy="265" r="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+                        </svg>
                     </div>
                 </div>
             </div>
@@ -383,6 +413,21 @@
                         <li><a href="om-oss.html">Om Oss</a></li>
                     </ul>
                 </div>
+
+                <div class="footer-social">
+                    <h4>Folj Oss</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook" title="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram" title="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <div class="footer-bottom">
@@ -390,6 +435,17 @@
             </div>
         </div>
     </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-banner" id="cookie-banner">
+        <div class="cookie-content">
+            <p>Vi anvander cookies for att forbattra din upplevelse pa var webbplats.</p>
+            <div class="cookie-actions">
+                <button class="cookie-btn cookie-accept" id="cookie-accept">Acceptera</button>
+                <button class="cookie-btn cookie-decline" id="cookie-decline">Avboj</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Back to Top Button -->
     <button class="back-to-top" aria-label="Back to top">

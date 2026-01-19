@@ -178,7 +178,15 @@ CONTENT = {
             'contact': "Contact Us",
             'hours': "Business Hours",
             'quick_links': "Quick Links",
+            'follow_us': "Follow Us",
             'copyright': f"© {datetime.now().year} Lidice's Cleaning Services. All rights reserved."
+        },
+
+        'cookie': {
+            'message': "We use cookies to improve your experience on our website.",
+            'accept': "Accept",
+            'decline': "Decline",
+            'link_text': "Privacy Policy"
         },
 
         # Services Page
@@ -480,7 +488,15 @@ CONTENT = {
             'contact': "Kontakta Oss",
             'hours': "Oppettider",
             'quick_links': "Snabblankar",
+            'follow_us': "Folj Oss",
             'copyright': f"© {datetime.now().year} Lidice's Cleaning Services. Alla rattigheter forbehallna."
+        },
+
+        'cookie': {
+            'message': "Vi anvander cookies for att forbattra din upplevelse pa var webbplats.",
+            'accept': "Acceptera",
+            'decline': "Avboj",
+            'link_text': "Integritetspolicy"
         },
 
         # Services Page
@@ -790,6 +806,21 @@ def get_base_template(lang, title, content, active_page='home'):
                         <li><a href="{c['pages']['about']}">{c['nav']['about']}</a></li>
                     </ul>
                 </div>
+
+                <div class="footer-social">
+                    <h4>{c['footer']['follow_us']}</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook" title="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram" title="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <div class="footer-bottom">
@@ -797,6 +828,17 @@ def get_base_template(lang, title, content, active_page='home'):
             </div>
         </div>
     </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-banner" id="cookie-banner">
+        <div class="cookie-content">
+            <p>{c['cookie']['message']}</p>
+            <div class="cookie-actions">
+                <button class="cookie-btn cookie-accept" id="cookie-accept">{c['cookie']['accept']}</button>
+                <button class="cookie-btn cookie-decline" id="cookie-decline">{c['cookie']['decline']}</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Back to Top Button -->
     <button class="back-to-top" aria-label="Back to top">
@@ -882,12 +924,42 @@ def generate_home_page(lang):
         <!-- Hero Section -->
         <section class="hero">
             <div class="container">
-                <div class="hero-content">
-                    <h1>{c['hero']['title']}</h1>
-                    <p class="hero-subtitle">{c['hero']['subtitle']}</p>
-                    <div class="hero-actions">
-                        <a href="{c['pages']['quote']}" class="btn btn-primary btn-lg">{c['hero']['cta']}</a>
-                        <p class="hero-phone">{c['hero']['or_call']} <a href="tel:{CONTACT_INFO['phone']}">{CONTACT_INFO['phone']}</a></p>
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <h1>{c['hero']['title']}</h1>
+                        <p class="hero-subtitle">{c['hero']['subtitle']}</p>
+                        <div class="hero-actions">
+                            <a href="{c['pages']['quote']}" class="btn btn-primary btn-lg">{c['hero']['cta']}</a>
+                            <p class="hero-phone">{c['hero']['or_call']} <a href="tel:{CONTACT_INFO['phone']}">{CONTACT_INFO['phone']}</a></p>
+                        </div>
+                    </div>
+                    <div class="hero-illustration">
+                        <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- House -->
+                            <path d="M200 40L320 120V260H80V120L200 40Z" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+                            <path d="M200 40L80 120H320L200 40Z" fill="#bbf7d0"/>
+                            <!-- Door -->
+                            <rect x="175" y="180" width="50" height="80" fill="#16a34a" rx="4"/>
+                            <circle cx="215" cy="220" r="4" fill="#fbbf24"/>
+                            <!-- Windows -->
+                            <rect x="105" y="140" width="45" height="50" fill="#bfdbfe" stroke="#16a34a" stroke-width="2" rx="2"/>
+                            <rect x="250" y="140" width="45" height="50" fill="#bfdbfe" stroke="#16a34a" stroke-width="2" rx="2"/>
+                            <line x1="127" y1="140" x2="127" y2="190" stroke="#16a34a" stroke-width="2"/>
+                            <line x1="105" y1="165" x2="150" y2="165" stroke="#16a34a" stroke-width="2"/>
+                            <line x1="272" y1="140" x2="272" y2="190" stroke="#16a34a" stroke-width="2"/>
+                            <line x1="250" y1="165" x2="295" y2="165" stroke="#16a34a" stroke-width="2"/>
+                            <!-- Sparkles -->
+                            <path d="M340 80L345 95L360 100L345 105L340 120L335 105L320 100L335 95L340 80Z" fill="#fbbf24"/>
+                            <path d="M60 140L63 150L73 153L63 156L60 166L57 156L47 153L57 150L60 140Z" fill="#fbbf24"/>
+                            <path d="M350 180L352 186L358 188L352 190L350 196L348 190L342 188L348 186L350 180Z" fill="#fbbf24"/>
+                            <!-- Plant/Tree -->
+                            <ellipse cx="50" cy="250" rx="30" ry="35" fill="#22c55e"/>
+                            <rect x="45" y="250" width="10" height="30" fill="#92400e"/>
+                            <!-- Cleaning bubbles -->
+                            <circle cx="360" cy="240" r="12" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+                            <circle cx="345" cy="255" r="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+                            <circle cx="370" cy="265" r="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+                        </svg>
                     </div>
                 </div>
             </div>
@@ -1805,12 +1877,29 @@ h4 { font-size: 1.125rem; }
 .hero {
     padding: 10rem 0 6rem;
     background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-    text-align: center;
+    overflow: hidden;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
 }
 
 .hero-content {
-    max-width: 680px;
-    margin: 0 auto;
+    max-width: 600px;
+}
+
+.hero-illustration {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-illustration svg {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
 }
 
 .hero h1 {
@@ -1824,6 +1913,27 @@ h4 { font-size: 1.125rem; }
     margin-bottom: 2rem;
 }
 
+@media (max-width: 992px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .hero-illustration {
+        order: -1;
+        margin-bottom: 2rem;
+    }
+
+    .hero-illustration svg {
+        max-width: 300px;
+    }
+}
+
 @media (max-width: 768px) {
     .hero {
         padding: 8rem 0 4rem;
@@ -1835,6 +1945,10 @@ h4 { font-size: 1.125rem; }
 
     .hero-subtitle {
         font-size: 1rem;
+    }
+
+    .hero-illustration svg {
+        max-width: 250px;
     }
 }
 
@@ -2843,6 +2957,130 @@ h4 { font-size: 1.125rem; }
         height: 44px;
     }
 }
+
+/* =============================================================================
+   Social Links
+   ============================================================================= */
+
+.social-links {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--text-lighter);
+    transition: all var(--transition);
+}
+
+.social-link:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.social-link svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* =============================================================================
+   Cookie Consent Banner
+   ============================================================================= */
+
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--text);
+    color: white;
+    padding: 1rem 0;
+    z-index: 1000;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cookie-banner.visible {
+    transform: translateY(0);
+}
+
+.cookie-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.cookie-content p {
+    font-size: 0.9375rem;
+    color: var(--text-lighter);
+    margin: 0;
+}
+
+.cookie-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+.cookie-btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all var(--transition);
+    border: none;
+    font-family: inherit;
+}
+
+.cookie-accept {
+    background: var(--primary);
+    color: white;
+}
+
+.cookie-accept:hover {
+    background: var(--primary-dark);
+}
+
+.cookie-decline {
+    background: transparent;
+    color: var(--text-lighter);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cookie-decline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .cookie-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    .cookie-content p {
+        font-size: 0.875rem;
+    }
+
+    .cookie-actions {
+        width: 100%;
+        justify-content: center;
+    }
+}
 '''
 
 
@@ -2991,6 +3229,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 behavior: 'smooth'
             });
         });
+    }
+
+    // Cookie Consent Banner
+    var cookieBanner = document.getElementById('cookie-banner');
+    var cookieAccept = document.getElementById('cookie-accept');
+    var cookieDecline = document.getElementById('cookie-decline');
+
+    if (cookieBanner) {
+        var cookieConsent = localStorage.getItem('lidice-cookie-consent');
+
+        if (!cookieConsent) {
+            setTimeout(function() {
+                cookieBanner.classList.add('visible');
+            }, 1000);
+        }
+
+        if (cookieAccept) {
+            cookieAccept.addEventListener('click', function() {
+                localStorage.setItem('lidice-cookie-consent', 'accepted');
+                cookieBanner.classList.remove('visible');
+            });
+        }
+
+        if (cookieDecline) {
+            cookieDecline.addEventListener('click', function() {
+                localStorage.setItem('lidice-cookie-consent', 'declined');
+                cookieBanner.classList.remove('visible');
+            });
+        }
     }
 });
 '''

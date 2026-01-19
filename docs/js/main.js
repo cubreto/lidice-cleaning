@@ -138,4 +138,33 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    // Cookie Consent Banner
+    var cookieBanner = document.getElementById('cookie-banner');
+    var cookieAccept = document.getElementById('cookie-accept');
+    var cookieDecline = document.getElementById('cookie-decline');
+
+    if (cookieBanner) {
+        var cookieConsent = localStorage.getItem('lidice-cookie-consent');
+
+        if (!cookieConsent) {
+            setTimeout(function() {
+                cookieBanner.classList.add('visible');
+            }, 1000);
+        }
+
+        if (cookieAccept) {
+            cookieAccept.addEventListener('click', function() {
+                localStorage.setItem('lidice-cookie-consent', 'accepted');
+                cookieBanner.classList.remove('visible');
+            });
+        }
+
+        if (cookieDecline) {
+            cookieDecline.addEventListener('click', function() {
+                localStorage.setItem('lidice-cookie-consent', 'declined');
+                cookieBanner.classList.remove('visible');
+            });
+        }
+    }
 });
