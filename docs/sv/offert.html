@@ -93,103 +93,168 @@
     <main>
         
         <!-- Page Header -->
-        <section class="page-header">
+        <section class="quote-hero">
             <div class="container">
-                <h1>Fa en Gratis Offert</h1>
-                <p>Fyll i formularet nedan sa aterkommer vi inom 24 timmar</p>
-            </div>
-        </section>
-
-        <!-- Quote Form -->
-        <section class="section">
-            <div class="container">
-                <div class="form-container">
-                    <form id="quote-form" action="https://formspree.io/f/xyzgkqwp" method="POST">
-                        <input type="hidden" name="_language" value="sv">
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="service">Tjanstetyp</label>
-                                <select id="service" name="service" required>
-                                    <option value="">--</option>
-                                    <option value="Hemstadning - Regelbunden">Hemstadning - Regelbunden</option><option value="Hemstadning - Storstadning">Hemstadning - Storstadning</option><option value="Hemstadning - Flytt-Stadning">Hemstadning - Flytt-Stadning</option><option value="Hemstadning - Fonsterputs">Hemstadning - Fonsterputs</option><option value="Skola - Forskola">Skola - Forskola</option><option value="Skola - Grundskola">Skola - Grundskola</option><option value="Skola - Gymnasium">Skola - Gymnasium</option><option value="Skola - Djupdesinfektion">Skola - Djupdesinfektion</option><option value="Annat">Annat</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="frequency">Stadfrekvens</label>
-                                <select id="frequency" name="frequency" required>
-                                    <option value="">--</option>
-                                    <option value="Engangs">Engangs</option><option value="Varje vecka">Varje vecka</option><option value="Varannan vecka">Varannan vecka</option><option value="Manadsvis">Manadsvis</option><option value="Anpassat schema">Anpassat schema</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="size">Storlek (ungefar kvm)</label>
-                                <input type="text" id="size" name="size" placeholder="e.g., 80">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="address">Fastighetens Adress</label>
-                                <input type="text" id="address" name="address" placeholder="Stockholm">
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Ditt Namn</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email">E-postadress</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Telefonnummer</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Ytterligare Information</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Beratta om eventuella speciella krav eller fragor..."></textarea>
-                        </div>
-
-                        <p class="form-privacy">Vi respekterar din integritet. Din information anvands endast for att svara pa din forfragan.</p>
-
-                        <button type="submit" class="btn btn-primary btn-lg btn-full">Skicka Forfragan</button>
-                    </form>
-
-                    <div id="form-success" class="form-message success" style="display: none;">
-                        Tack. Vi kontaktar dig inom 24 timmar.
-                    </div>
-
-                    <div id="form-error" class="form-message error" style="display: none;">
-                        Nagot gick fel. Forsok igen eller kontakta oss direkt.
-                    </div>
+                <div class="quote-hero-content">
+                    <h1>Fa en Gratis Offert</h1>
+                    <p>Fyll i formularet nedan sa aterkommer vi inom 24 timmar</p>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Info -->
-        <section class="section section-alt">
+        <!-- Quote Form Section -->
+        <section class="quote-section">
             <div class="container">
-                <div class="contact-cards">
-                    <div class="contact-card">
-                        <h3>Phone</h3>
-                        <a href="tel:+46 73 534 4533">+46 73 534 4533</a>
+                <div class="quote-layout">
+                    <!-- Form Column -->
+                    <div class="quote-form-column">
+                        <div class="form-container">
+                            <form id="quote-form" action="https://formspree.io/f/xyzgkqwp" method="POST">
+                                <input type="hidden" name="_language" value="sv">
+
+                                <!-- Service Details -->
+                                <div class="form-section">
+                                    <h3 class="form-section-title">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                                        Tjanstedetaljer
+                                    </h3>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="service">Tjanstedetaljer</label>
+                                            <select id="service" name="service" required>
+                                                <option value="">Valj ett alternativ</option>
+                                                <option value="Hemstadning - Regelbunden">Hemstadning - Regelbunden</option><option value="Hemstadning - Storstadning">Hemstadning - Storstadning</option><option value="Hemstadning - Flytt-Stadning">Hemstadning - Flytt-Stadning</option><option value="Hemstadning - Fonsterputs">Hemstadning - Fonsterputs</option><option value="Skola - Forskola">Skola - Forskola</option><option value="Skola - Grundskola">Skola - Grundskola</option><option value="Skola - Gymnasium">Skola - Gymnasium</option><option value="Skola - Djupdesinfektion">Skola - Djupdesinfektion</option><option value="Annat">Annat</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="frequency">Frekvens</label>
+                                            <select id="frequency" name="frequency" required>
+                                                <option value="">Valj ett alternativ</option>
+                                                <option value="Engangs">Engangs</option><option value="Varje vecka">Varje vecka</option><option value="Varannan vecka">Varannan vecka</option><option value="Manadsvis">Manadsvis</option><option value="Anpassat schema">Anpassat schema</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="size">Storlek (kvm)</label>
+                                            <input type="text" id="size" name="size" placeholder="t.ex. 80">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="address">Fastighetens Adress</label>
+                                            <input type="text" id="address" name="address" placeholder="Gata, Stad">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Contact Details -->
+                                <div class="form-section">
+                                    <h3 class="form-section-title">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                        Din Kontaktinformation
+                                    </h3>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="name">Fullstandigt Namn</label>
+                                            <input type="text" id="name" name="name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="phone">Telefonnummer</label>
+                                            <input type="tel" id="phone" name="phone" placeholder="+46 XX XXX XXXX">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">E-postadress</label>
+                                        <input type="email" id="email" name="email" required>
+                                    </div>
+                                </div>
+
+                                <!-- Additional Info -->
+                                <div class="form-section">
+                                    <h3 class="form-section-title">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                        Ytterligare Information
+                                    </h3>
+                                    <div class="form-group">
+                                        <textarea id="message" name="message" rows="4" placeholder="Beratta om specialkrav, tillgangsinstruktioner eller fragor..."></textarea>
+                                    </div>
+                                </div>
+
+                                <p class="form-privacy">Din information ar saker och anvands endast for att svara pa din forfragan.</p>
+
+                                <button type="submit" class="btn btn-primary btn-lg btn-full">
+                                    <span>Skicka Offertforfragan</span>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                                </button>
+                            </form>
+
+                            <div id="form-success" class="form-message success" style="display: none;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <span>Tack! Vi kontaktar dig inom 24 timmar.</span>
+                            </div>
+
+                            <div id="form-error" class="form-message error" style="display: none;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                                <span>Nagot gick fel. Forsok igen eller ring oss direkt.</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="contact-card">
-                        <h3>Email</h3>
-                        <a href="mailto:lidice.cleaning@gmail.com">lidice.cleaning@gmail.com</a>
-                    </div>
-                    <div class="contact-card">
-                        <h3>Oppettider</h3>
-                        <p>Man-Fre 7:00-18:00</p>
+
+                    <!-- Info Column -->
+                    <div class="quote-info-column">
+                        <!-- What Happens Next -->
+                        <div class="quote-info-card">
+                            <h3>Vad Hander Sedan?</h3>
+                            <div class="next-steps">
+                                <div class="next-step">
+                                    <div class="next-step-number">1</div>
+                                    <div class="next-step-content">
+                                        <strong>Vi Granskar</strong>
+                                        <p>Vart team granskar din forfragan och forbereder en anpassad offert.</p>
+                                    </div>
+                                </div>
+                                <div class="next-step">
+                                    <div class="next-step-number">2</div>
+                                    <div class="next-step-content">
+                                        <strong>Vi Kontaktar Dig</strong>
+                                        <p>Inom 24 timmar ringer eller mejlar vi med din detaljerade offert.</p>
+                                    </div>
+                                </div>
+                                <div class="next-step">
+                                    <div class="next-step-number">3</div>
+                                    <div class="next-step-content">
+                                        <strong>Du Bestammer</strong>
+                                        <p>Ingen press. Granska offerten och meddela oss om du vill ga vidare.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Options -->
+                        <div class="quote-info-card quote-contact-card">
+                            <h3>Foredrar du att Prata?</h3>
+                            <p>Ring oss direkt och prata med vart team.</p>
+                            <a href="tel:+46 73 534 4533" class="quote-phone-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                +46 73 534 4533
+                            </a>
+                            <p class="quote-hours">Man-Fre 7:00-18:00</p>
+                        </div>
+
+                        <!-- Trust Indicators -->
+                        <div class="quote-trust-badges">
+                            <div class="quote-trust-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                <span>Gratis Offert</span>
+                            </div>
+                            <div class="quote-trust-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span>24h Svar</span>
+                            </div>
+                            <div class="quote-trust-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <span>Ingen Forpliktelse</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -237,7 +237,9 @@ CONTENT = {
             'title': "Get a Free Quote",
             'subtitle': "Fill out the form below and we will respond within 24 hours",
             'form': {
-                'service_type': "Service Type",
+                'service_type': "Service Details",
+                'contact_details': "Your Contact Information",
+                'select_placeholder': "Select an option",
                 'service_options': [
                     "Residential - Regular Cleaning",
                     "Residential - Deep Cleaning",
@@ -249,8 +251,9 @@ CONTENT = {
                     "School - Deep Sanitization",
                     "Other"
                 ],
-                'property_size': "Property Size (approx. sqm)",
-                'frequency': "Cleaning Frequency",
+                'property_size': "Property Size (sqm)",
+                'size_placeholder': "e.g., 80",
+                'frequency': "Frequency",
                 'frequency_options': [
                     "One-time",
                     "Weekly",
@@ -258,17 +261,37 @@ CONTENT = {
                     "Monthly",
                     "Custom schedule"
                 ],
-                'name': "Your Name",
+                'name': "Full Name",
                 'email': "Email Address",
                 'phone': "Phone Number",
+                'phone_placeholder': "+46 XX XXX XXXX",
                 'address': "Property Address",
+                'address_placeholder': "Street, City",
                 'message': "Additional Information",
-                'message_placeholder': "Tell us about any special requirements or questions...",
-                'submit': "Send Request",
-                'privacy': "We respect your privacy. Your information will only be used to respond to your inquiry."
+                'message_placeholder': "Tell us about any special requirements, access instructions, or questions...",
+                'submit': "Send Quote Request",
+                'privacy': "Your information is secure and will only be used to respond to your inquiry."
             },
-            'success': "Thank you. We will contact you within 24 hours.",
-            'error': "Something went wrong. Please try again or contact us directly."
+            'next_steps': {
+                'title': "What Happens Next?",
+                'step1_title': "We Review",
+                'step1_desc': "Our team reviews your request and prepares a customized quote.",
+                'step2_title': "We Contact You",
+                'step2_desc': "Within 24 hours, we will call or email with your detailed quote.",
+                'step3_title': "You Decide",
+                'step3_desc': "No pressure. Review the quote and let us know if you would like to proceed."
+            },
+            'prefer_call': {
+                'title': "Prefer to Talk?",
+                'desc': "Call us directly and speak with our team."
+            },
+            'trust': {
+                'free': "Free Quote",
+                'response': "24h Response",
+                'obligation': "No Obligation"
+            },
+            'success': "Thank you! We will contact you within 24 hours.",
+            'error': "Something went wrong. Please try again or call us directly."
         },
 
         # About Page
@@ -516,7 +539,9 @@ CONTENT = {
             'title': "Fa en Gratis Offert",
             'subtitle': "Fyll i formularet nedan sa aterkommer vi inom 24 timmar",
             'form': {
-                'service_type': "Tjanstetyp",
+                'service_type': "Tjanstedetaljer",
+                'contact_details': "Din Kontaktinformation",
+                'select_placeholder': "Valj ett alternativ",
                 'service_options': [
                     "Hemstadning - Regelbunden",
                     "Hemstadning - Storstadning",
@@ -528,8 +553,9 @@ CONTENT = {
                     "Skola - Djupdesinfektion",
                     "Annat"
                 ],
-                'property_size': "Storlek (ungefar kvm)",
-                'frequency': "Stadfrekvens",
+                'property_size': "Storlek (kvm)",
+                'size_placeholder': "t.ex. 80",
+                'frequency': "Frekvens",
                 'frequency_options': [
                     "Engangs",
                     "Varje vecka",
@@ -537,17 +563,37 @@ CONTENT = {
                     "Manadsvis",
                     "Anpassat schema"
                 ],
-                'name': "Ditt Namn",
+                'name': "Fullstandigt Namn",
                 'email': "E-postadress",
                 'phone': "Telefonnummer",
+                'phone_placeholder': "+46 XX XXX XXXX",
                 'address': "Fastighetens Adress",
+                'address_placeholder': "Gata, Stad",
                 'message': "Ytterligare Information",
-                'message_placeholder': "Beratta om eventuella speciella krav eller fragor...",
-                'submit': "Skicka Forfragan",
-                'privacy': "Vi respekterar din integritet. Din information anvands endast for att svara pa din forfragan."
+                'message_placeholder': "Beratta om specialkrav, tillgangsinstruktioner eller fragor...",
+                'submit': "Skicka Offertforfragan",
+                'privacy': "Din information ar saker och anvands endast for att svara pa din forfragan."
             },
-            'success': "Tack. Vi kontaktar dig inom 24 timmar.",
-            'error': "Nagot gick fel. Forsok igen eller kontakta oss direkt."
+            'next_steps': {
+                'title': "Vad Hander Sedan?",
+                'step1_title': "Vi Granskar",
+                'step1_desc': "Vart team granskar din forfragan och forbereder en anpassad offert.",
+                'step2_title': "Vi Kontaktar Dig",
+                'step2_desc': "Inom 24 timmar ringer eller mejlar vi med din detaljerade offert.",
+                'step3_title': "Du Bestammer",
+                'step3_desc': "Ingen press. Granska offerten och meddela oss om du vill ga vidare."
+            },
+            'prefer_call': {
+                'title': "Foredrar du att Prata?",
+                'desc': "Ring oss direkt och prata med vart team."
+            },
+            'trust': {
+                'free': "Gratis Offert",
+                'response': "24h Svar",
+                'obligation': "Ingen Forpliktelse"
+            },
+            'success': "Tack! Vi kontaktar dig inom 24 timmar.",
+            'error': "Nagot gick fel. Forsok igen eller ring oss direkt."
         },
 
         # About Page
@@ -1038,103 +1084,168 @@ def generate_quote_page(lang):
 
     content = f'''
         <!-- Page Header -->
-        <section class="page-header">
+        <section class="quote-hero">
             <div class="container">
-                <h1>{qp['title']}</h1>
-                <p>{qp['subtitle']}</p>
-            </div>
-        </section>
-
-        <!-- Quote Form -->
-        <section class="section">
-            <div class="container">
-                <div class="form-container">
-                    <form id="quote-form" action="{FORMSPREE_ENDPOINT}" method="POST">
-                        <input type="hidden" name="_language" value="{lang}">
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="service">{qp['form']['service_type']}</label>
-                                <select id="service" name="service" required>
-                                    <option value="">--</option>
-                                    {service_options_html}
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="frequency">{qp['form']['frequency']}</label>
-                                <select id="frequency" name="frequency" required>
-                                    <option value="">--</option>
-                                    {freq_options_html}
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="size">{qp['form']['property_size']}</label>
-                                <input type="text" id="size" name="size" placeholder="e.g., 80">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="address">{qp['form']['address']}</label>
-                                <input type="text" id="address" name="address" placeholder="Stockholm">
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">{qp['form']['name']}</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email">{qp['form']['email']}</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">{qp['form']['phone']}</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">{qp['form']['message']}</label>
-                            <textarea id="message" name="message" rows="4" placeholder="{qp['form']['message_placeholder']}"></textarea>
-                        </div>
-
-                        <p class="form-privacy">{qp['form']['privacy']}</p>
-
-                        <button type="submit" class="btn btn-primary btn-lg btn-full">{qp['form']['submit']}</button>
-                    </form>
-
-                    <div id="form-success" class="form-message success" style="display: none;">
-                        {qp['success']}
-                    </div>
-
-                    <div id="form-error" class="form-message error" style="display: none;">
-                        {qp['error']}
-                    </div>
+                <div class="quote-hero-content">
+                    <h1>{qp['title']}</h1>
+                    <p>{qp['subtitle']}</p>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Info -->
-        <section class="section section-alt">
+        <!-- Quote Form Section -->
+        <section class="quote-section">
             <div class="container">
-                <div class="contact-cards">
-                    <div class="contact-card">
-                        <h3>Phone</h3>
-                        <a href="tel:{CONTACT_INFO['phone']}">{CONTACT_INFO['phone']}</a>
+                <div class="quote-layout">
+                    <!-- Form Column -->
+                    <div class="quote-form-column">
+                        <div class="form-container">
+                            <form id="quote-form" action="{FORMSPREE_ENDPOINT}" method="POST">
+                                <input type="hidden" name="_language" value="{lang}">
+
+                                <!-- Service Details -->
+                                <div class="form-section">
+                                    <h3 class="form-section-title">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                                        {qp['form']['service_type']}
+                                    </h3>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="service">{qp['form']['service_type']}</label>
+                                            <select id="service" name="service" required>
+                                                <option value="">{qp['form']['select_placeholder']}</option>
+                                                {service_options_html}
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="frequency">{qp['form']['frequency']}</label>
+                                            <select id="frequency" name="frequency" required>
+                                                <option value="">{qp['form']['select_placeholder']}</option>
+                                                {freq_options_html}
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="size">{qp['form']['property_size']}</label>
+                                            <input type="text" id="size" name="size" placeholder="{qp['form']['size_placeholder']}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="address">{qp['form']['address']}</label>
+                                            <input type="text" id="address" name="address" placeholder="{qp['form']['address_placeholder']}">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Contact Details -->
+                                <div class="form-section">
+                                    <h3 class="form-section-title">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                        {qp['form']['contact_details']}
+                                    </h3>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="name">{qp['form']['name']}</label>
+                                            <input type="text" id="name" name="name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="phone">{qp['form']['phone']}</label>
+                                            <input type="tel" id="phone" name="phone" placeholder="{qp['form']['phone_placeholder']}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">{qp['form']['email']}</label>
+                                        <input type="email" id="email" name="email" required>
+                                    </div>
+                                </div>
+
+                                <!-- Additional Info -->
+                                <div class="form-section">
+                                    <h3 class="form-section-title">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                        {qp['form']['message']}
+                                    </h3>
+                                    <div class="form-group">
+                                        <textarea id="message" name="message" rows="4" placeholder="{qp['form']['message_placeholder']}"></textarea>
+                                    </div>
+                                </div>
+
+                                <p class="form-privacy">{qp['form']['privacy']}</p>
+
+                                <button type="submit" class="btn btn-primary btn-lg btn-full">
+                                    <span>{qp['form']['submit']}</span>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                                </button>
+                            </form>
+
+                            <div id="form-success" class="form-message success" style="display: none;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <span>{qp['success']}</span>
+                            </div>
+
+                            <div id="form-error" class="form-message error" style="display: none;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                                <span>{qp['error']}</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="contact-card">
-                        <h3>Email</h3>
-                        <a href="mailto:{CONTACT_INFO['email']}">{CONTACT_INFO['email']}</a>
-                    </div>
-                    <div class="contact-card">
-                        <h3>{c['footer']['hours']}</h3>
-                        <p>{CONTACT_INFO['hours'][lang]}</p>
+
+                    <!-- Info Column -->
+                    <div class="quote-info-column">
+                        <!-- What Happens Next -->
+                        <div class="quote-info-card">
+                            <h3>{qp['next_steps']['title']}</h3>
+                            <div class="next-steps">
+                                <div class="next-step">
+                                    <div class="next-step-number">1</div>
+                                    <div class="next-step-content">
+                                        <strong>{qp['next_steps']['step1_title']}</strong>
+                                        <p>{qp['next_steps']['step1_desc']}</p>
+                                    </div>
+                                </div>
+                                <div class="next-step">
+                                    <div class="next-step-number">2</div>
+                                    <div class="next-step-content">
+                                        <strong>{qp['next_steps']['step2_title']}</strong>
+                                        <p>{qp['next_steps']['step2_desc']}</p>
+                                    </div>
+                                </div>
+                                <div class="next-step">
+                                    <div class="next-step-number">3</div>
+                                    <div class="next-step-content">
+                                        <strong>{qp['next_steps']['step3_title']}</strong>
+                                        <p>{qp['next_steps']['step3_desc']}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Options -->
+                        <div class="quote-info-card quote-contact-card">
+                            <h3>{qp['prefer_call']['title']}</h3>
+                            <p>{qp['prefer_call']['desc']}</p>
+                            <a href="tel:{CONTACT_INFO['phone']}" class="quote-phone-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                {CONTACT_INFO['phone']}
+                            </a>
+                            <p class="quote-hours">{CONTACT_INFO['hours'][lang]}</p>
+                        </div>
+
+                        <!-- Trust Indicators -->
+                        <div class="quote-trust-badges">
+                            <div class="quote-trust-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                <span>{qp['trust']['free']}</span>
+                            </div>
+                            <div class="quote-trust-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span>{qp['trust']['response']}</span>
+                            </div>
+                            <div class="quote-trust-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <span>{qp['trust']['obligation']}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2178,26 +2289,80 @@ h4 { font-size: 1.125rem; }
 }
 
 /* =============================================================================
-   Quote Form
+   Quote Page - Redesigned
    ============================================================================= */
 
-.form-container {
-    max-width: 680px;
-    margin: 0 auto;
+.quote-hero {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    padding: 8rem 0 4rem;
+    text-align: center;
+}
+
+.quote-hero h1 {
+    font-size: 2.5rem;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+}
+
+.quote-hero p {
+    color: var(--text-light);
+    font-size: 1.125rem;
+}
+
+.quote-section {
+    padding: 4rem 0;
+    background: var(--bg-alt);
+}
+
+.quote-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 3rem;
+    align-items: start;
+}
+
+.quote-form-column .form-container {
     background: white;
-    padding: 2.5rem;
+    padding: 2rem;
     border-radius: var(--radius-lg);
     border: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.form-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 1.5rem;
+}
+
+.form-section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+}
+
+.form-section-title svg {
+    color: var(--primary);
 }
 
 .form-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.25rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
 }
 
 .form-group {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
 }
 
 .form-group label {
@@ -2205,7 +2370,7 @@ h4 { font-size: 1.125rem; }
     font-weight: 500;
     margin-bottom: 0.375rem;
     color: var(--text);
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
 }
 
 .form-group input,
@@ -2213,11 +2378,12 @@ h4 { font-size: 1.125rem; }
 .form-group textarea {
     width: 100%;
     padding: 0.75rem 1rem;
-    font-size: 1rem;
+    font-size: 0.9375rem;
     font-family: inherit;
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    transition: border-color var(--transition);
+    background: white;
+    transition: border-color var(--transition), box-shadow var(--transition);
 }
 
 .form-group input:focus,
@@ -2225,6 +2391,12 @@ h4 { font-size: 1.125rem; }
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9ca3af;
 }
 
 .form-group textarea {
@@ -2238,9 +2410,28 @@ h4 { font-size: 1.125rem; }
     margin-bottom: 1.25rem;
 }
 
+.btn-full {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-full svg {
+    transition: transform var(--transition);
+}
+
+.btn-full:hover svg {
+    transform: translateX(4px);
+}
+
 .form-message {
-    text-align: center;
-    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.25rem;
     border-radius: var(--radius);
     margin-top: 1.25rem;
     font-weight: 500;
@@ -2256,13 +2447,175 @@ h4 { font-size: 1.125rem; }
     color: #991b1b;
 }
 
-@media (max-width: 768px) {
-    .form-container {
-        padding: 1.5rem;
+/* Quote Info Column */
+.quote-info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.quote-info-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+}
+
+.quote-info-card h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.next-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.next-step {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.next-step-number {
+    width: 28px;
+    height: 28px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.next-step-content strong {
+    display: block;
+    font-size: 0.9375rem;
+    margin-bottom: 0.25rem;
+}
+
+.next-step-content p {
+    font-size: 0.8125rem;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+.quote-contact-card {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    text-align: center;
+}
+
+.quote-contact-card h3 {
+    color: var(--primary-dark);
+}
+
+.quote-contact-card > p {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.quote-phone-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.quote-phone-link:hover {
+    color: var(--primary-dark);
+}
+
+.quote-hours {
+    font-size: 0.8125rem;
+    color: var(--text-light);
+}
+
+.quote-trust-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background: white;
+    padding: 1.25rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+}
+
+.quote-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--text);
+}
+
+.quote-trust-item svg {
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+@media (max-width: 992px) {
+    .quote-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .quote-info-column {
+        order: -1;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .quote-info-card {
+        flex: 1;
+        min-width: 280px;
+    }
+
+    .quote-trust-badges {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
     }
 }
 
-/* Contact Cards */
+@media (max-width: 768px) {
+    .quote-hero {
+        padding: 6rem 0 3rem;
+    }
+
+    .quote-hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .quote-section {
+        padding: 2rem 0;
+    }
+
+    .quote-form-column .form-container {
+        padding: 1.5rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .quote-info-column {
+        flex-direction: column;
+    }
+
+    .quote-trust-badges {
+        flex-direction: column;
+    }
+}
+
+/* Contact Cards - Legacy */
 .contact-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
