@@ -112,27 +112,72 @@
                             <form id="quote-form" action="https://formspree.io/f/xyzgkqwp" method="POST">
                                 <input type="hidden" name="_language" value="sv">
 
-                                <!-- Service Details -->
+                                <!-- Step 1: Service Type -->
                                 <div class="form-section">
-                                    <h3 class="form-section-title">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                                        Tjanstedetaljer
-                                    </h3>
-                                    <div class="form-row">
-                                        <div class="form-group">
-                                            <label for="service">Tjanstedetaljer</label>
-                                            <select id="service" name="service" required>
-                                                <option value="">Valj ett alternativ</option>
-                                                <option value="Hemstadning - Regelbunden">Hemstadning - Regelbunden</option><option value="Hemstadning - Storstadning">Hemstadning - Storstadning</option><option value="Hemstadning - Flytt-Stadning">Hemstadning - Flytt-Stadning</option><option value="Hemstadning - Fonsterputs">Hemstadning - Fonsterputs</option><option value="Skola - Forskola">Skola - Forskola</option><option value="Skola - Grundskola">Skola - Grundskola</option><option value="Skola - Gymnasium">Skola - Gymnasium</option><option value="Skola - Djupdesinfektion">Skola - Djupdesinfektion</option><option value="Annat">Annat</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="frequency">Frekvens</label>
-                                            <select id="frequency" name="frequency" required>
-                                                <option value="">Valj ett alternativ</option>
-                                                <option value="Engangs">Engangs</option><option value="Varje vecka">Varje vecka</option><option value="Varannan vecka">Varannan vecka</option><option value="Manadsvis">Manadsvis</option><option value="Anpassat schema">Anpassat schema</option>
-                                            </select>
-                                        </div>
+                                    <div class="form-step-header">
+                                        <span class="form-step-number">1</span>
+                                        <h3>Valj Tjanstetyp</h3>
+                                    </div>
+                                    <div class="service-type-cards">
+                                        <label class="service-type-card">
+                                            <input type="radio" name="service_category" value="residential" required>
+                                            <div class="service-type-content">
+                                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                                <span class="service-type-title">Hemstadning</span>
+                                                <span class="service-type-desc">Stadtjanster for hemmet</span>
+                                            </div>
+                                        </label>
+                                        <label class="service-type-card">
+                                            <input type="radio" name="service_category" value="school">
+                                            <div class="service-type-content">
+                                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                                                <span class="service-type-title">Skola</span>
+                                                <span class="service-type-desc">Stadning av utbildningslokaler</span>
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                    <div class="form-group" style="margin-top: 1.25rem;">
+                                        <label for="service_detail">Specifik Tjanst (valfritt)</label>
+                                        <input type="text" id="service_detail" name="service_detail" placeholder="t.ex. Storstadning, Fonsterputs, Flyttstadning...">
+                                    </div>
+                                </div>
+
+                                <!-- Step 2: Frequency -->
+                                <div class="form-section">
+                                    <div class="form-step-header">
+                                        <span class="form-step-number">2</span>
+                                        <h3>Hur Ofta?</h3>
+                                    </div>
+                                    <div class="frequency-options">
+                                        <label class="frequency-option">
+                                            <input type="radio" name="frequency" value="one-time" required>
+                                            <span class="frequency-label">Engangs</span>
+                                        </label>
+                                        <label class="frequency-option">
+                                            <input type="radio" name="frequency" value="weekly">
+                                            <span class="frequency-label">Varje vecka</span>
+                                        </label>
+                                        <label class="frequency-option">
+                                            <input type="radio" name="frequency" value="biweekly">
+                                            <span class="frequency-label">Varannan vecka</span>
+                                        </label>
+                                        <label class="frequency-option">
+                                            <input type="radio" name="frequency" value="monthly">
+                                            <span class="frequency-label">Manadsvis</span>
+                                        </label>
+                                        <label class="frequency-option">
+                                            <input type="radio" name="frequency" value="custom">
+                                            <span class="frequency-label">Anpassat</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Step 3: Property Details -->
+                                <div class="form-section">
+                                    <div class="form-step-header">
+                                        <span class="form-step-number">3</span>
+                                        <h3>Fastighetsdetaljer</h3>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group">
@@ -146,12 +191,12 @@
                                     </div>
                                 </div>
 
-                                <!-- Contact Details -->
+                                <!-- Step 4: Contact Details -->
                                 <div class="form-section">
-                                    <h3 class="form-section-title">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                                        Din Kontaktinformation
-                                    </h3>
+                                    <div class="form-step-header">
+                                        <span class="form-step-number">4</span>
+                                        <h3>Din Kontaktinformation</h3>
+                                    </div>
                                     <div class="form-row">
                                         <div class="form-group">
                                             <label for="name">Fullstandigt Namn</label>

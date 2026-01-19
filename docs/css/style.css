@@ -926,6 +926,132 @@ h4 { font-size: 1.125rem; }
     color: var(--primary);
 }
 
+/* Step-based form headers */
+.form-step-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.form-step-header h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0;
+}
+
+.form-step-number {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.875rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+/* Service Type Cards */
+.service-type-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.service-type-card {
+    cursor: pointer;
+}
+
+.service-type-card input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.service-type-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    background: white;
+    transition: all var(--transition);
+}
+
+.service-type-card:hover .service-type-content {
+    border-color: var(--primary);
+    background: rgba(22, 163, 74, 0.02);
+}
+
+.service-type-card input:checked + .service-type-content {
+    border-color: var(--primary);
+    background: rgba(22, 163, 74, 0.05);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+.service-type-content svg {
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+}
+
+.service-type-title {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.service-type-desc {
+    font-size: 0.8125rem;
+    color: var(--text-light);
+}
+
+/* Frequency Options */
+.frequency-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+}
+
+.frequency-option {
+    cursor: pointer;
+}
+
+.frequency-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.frequency-label {
+    display: inline-block;
+    padding: 0.625rem 1.125rem;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    background: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text);
+    transition: all var(--transition);
+}
+
+.frequency-option:hover .frequency-label {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.frequency-option input:checked + .frequency-label {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
 .form-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1175,6 +1301,19 @@ h4 { font-size: 1.125rem; }
 
     .form-row {
         grid-template-columns: 1fr;
+    }
+
+    .service-type-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .frequency-options {
+        gap: 0.5rem;
+    }
+
+    .frequency-label {
+        padding: 0.5rem 0.875rem;
+        font-size: 0.8125rem;
     }
 
     .quote-info-column {

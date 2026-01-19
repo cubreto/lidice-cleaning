@@ -245,30 +245,23 @@ CONTENT = {
             'title': "Get a Free Quote",
             'subtitle': "Fill out the form below and we will respond within 24 hours",
             'form': {
-                'service_type': "Service Details",
+                'service_type': "Select Service Type",
+                'residential_label': "Residential",
+                'residential_desc': "Home cleaning services",
+                'school_label': "School",
+                'school_desc': "Educational facility cleaning",
+                'specific_service': "Specific Service (optional)",
+                'service_placeholder': "e.g., Deep cleaning, Window cleaning, Move-out...",
                 'contact_details': "Your Contact Information",
-                'select_placeholder': "Select an option",
-                'service_options': [
-                    "Residential - Regular Cleaning",
-                    "Residential - Deep Cleaning",
-                    "Residential - Move-In/Move-Out",
-                    "Residential - Window Cleaning",
-                    "School - Kindergarten",
-                    "School - Primary School",
-                    "School - Secondary School",
-                    "School - Deep Sanitization",
-                    "Other"
-                ],
+                'property_details': "Property Details",
                 'property_size': "Property Size (sqm)",
                 'size_placeholder': "e.g., 80",
-                'frequency': "Frequency",
-                'frequency_options': [
-                    "One-time",
-                    "Weekly",
-                    "Bi-weekly",
-                    "Monthly",
-                    "Custom schedule"
-                ],
+                'frequency': "How Often?",
+                'freq_onetime': "One-time",
+                'freq_weekly': "Weekly",
+                'freq_biweekly': "Bi-weekly",
+                'freq_monthly': "Monthly",
+                'freq_custom': "Custom",
                 'name': "Full Name",
                 'email': "Email Address",
                 'phone': "Phone Number",
@@ -555,30 +548,23 @@ CONTENT = {
             'title': "Fa en Gratis Offert",
             'subtitle': "Fyll i formularet nedan sa aterkommer vi inom 24 timmar",
             'form': {
-                'service_type': "Tjanstedetaljer",
+                'service_type': "Valj Tjanstetyp",
+                'residential_label': "Hemstadning",
+                'residential_desc': "Stadtjanster for hemmet",
+                'school_label': "Skola",
+                'school_desc': "Stadning av utbildningslokaler",
+                'specific_service': "Specifik Tjanst (valfritt)",
+                'service_placeholder': "t.ex. Storstadning, Fonsterputs, Flyttstadning...",
                 'contact_details': "Din Kontaktinformation",
-                'select_placeholder': "Valj ett alternativ",
-                'service_options': [
-                    "Hemstadning - Regelbunden",
-                    "Hemstadning - Storstadning",
-                    "Hemstadning - Flytt-Stadning",
-                    "Hemstadning - Fonsterputs",
-                    "Skola - Forskola",
-                    "Skola - Grundskola",
-                    "Skola - Gymnasium",
-                    "Skola - Djupdesinfektion",
-                    "Annat"
-                ],
+                'property_details': "Fastighetsdetaljer",
                 'property_size': "Storlek (kvm)",
                 'size_placeholder': "t.ex. 80",
-                'frequency': "Frekvens",
-                'frequency_options': [
-                    "Engangs",
-                    "Varje vecka",
-                    "Varannan vecka",
-                    "Manadsvis",
-                    "Anpassat schema"
-                ],
+                'frequency': "Hur Ofta?",
+                'freq_onetime': "Engangs",
+                'freq_weekly': "Varje vecka",
+                'freq_biweekly': "Varannan vecka",
+                'freq_monthly': "Manadsvis",
+                'freq_custom': "Anpassat",
                 'name': "Fullstandigt Namn",
                 'email': "E-postadress",
                 'phone': "Telefonnummer",
@@ -1144,16 +1130,6 @@ def generate_quote_page(lang):
     c = CONTENT[lang]
     qp = c['quote_page']
 
-    # Service options HTML
-    service_options_html = ''
-    for opt in qp['form']['service_options']:
-        service_options_html += f'<option value="{opt}">{opt}</option>'
-
-    # Frequency options HTML
-    freq_options_html = ''
-    for opt in qp['form']['frequency_options']:
-        freq_options_html += f'<option value="{opt}">{opt}</option>'
-
     content = f'''
         <!-- Page Header -->
         <section class="quote-hero">
@@ -1175,27 +1151,72 @@ def generate_quote_page(lang):
                             <form id="quote-form" action="{FORMSPREE_ENDPOINT}" method="POST">
                                 <input type="hidden" name="_language" value="{lang}">
 
-                                <!-- Service Details -->
+                                <!-- Step 1: Service Type -->
                                 <div class="form-section">
-                                    <h3 class="form-section-title">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                                        {qp['form']['service_type']}
-                                    </h3>
-                                    <div class="form-row">
-                                        <div class="form-group">
-                                            <label for="service">{qp['form']['service_type']}</label>
-                                            <select id="service" name="service" required>
-                                                <option value="">{qp['form']['select_placeholder']}</option>
-                                                {service_options_html}
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="frequency">{qp['form']['frequency']}</label>
-                                            <select id="frequency" name="frequency" required>
-                                                <option value="">{qp['form']['select_placeholder']}</option>
-                                                {freq_options_html}
-                                            </select>
-                                        </div>
+                                    <div class="form-step-header">
+                                        <span class="form-step-number">1</span>
+                                        <h3>{qp['form']['service_type']}</h3>
+                                    </div>
+                                    <div class="service-type-cards">
+                                        <label class="service-type-card">
+                                            <input type="radio" name="service_category" value="residential" required>
+                                            <div class="service-type-content">
+                                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                                <span class="service-type-title">{qp['form']['residential_label']}</span>
+                                                <span class="service-type-desc">{qp['form']['residential_desc']}</span>
+                                            </div>
+                                        </label>
+                                        <label class="service-type-card">
+                                            <input type="radio" name="service_category" value="school">
+                                            <div class="service-type-content">
+                                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                                                <span class="service-type-title">{qp['form']['school_label']}</span>
+                                                <span class="service-type-desc">{qp['form']['school_desc']}</span>
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                    <div class="form-group" style="margin-top: 1.25rem;">
+                                        <label for="service_detail">{qp['form']['specific_service']}</label>
+                                        <input type="text" id="service_detail" name="service_detail" placeholder="{qp['form']['service_placeholder']}">
+                                    </div>
+                                </div>
+
+                                <!-- Step 2: Frequency -->
+                                <div class="form-section">
+                                    <div class="form-step-header">
+                                        <span class="form-step-number">2</span>
+                                        <h3>{qp['form']['frequency']}</h3>
+                                    </div>
+                                    <div class="frequency-options">
+                                        <label class="frequency-option">
+                                            <input type="radio" name="frequency" value="one-time" required>
+                                            <span class="frequency-label">{qp['form']['freq_onetime']}</span>
+                                        </label>
+                                        <label class="frequency-option">
+                                            <input type="radio" name="frequency" value="weekly">
+                                            <span class="frequency-label">{qp['form']['freq_weekly']}</span>
+                                        </label>
+                                        <label class="frequency-option">
+                                            <input type="radio" name="frequency" value="biweekly">
+                                            <span class="frequency-label">{qp['form']['freq_biweekly']}</span>
+                                        </label>
+                                        <label class="frequency-option">
+                                            <input type="radio" name="frequency" value="monthly">
+                                            <span class="frequency-label">{qp['form']['freq_monthly']}</span>
+                                        </label>
+                                        <label class="frequency-option">
+                                            <input type="radio" name="frequency" value="custom">
+                                            <span class="frequency-label">{qp['form']['freq_custom']}</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Step 3: Property Details -->
+                                <div class="form-section">
+                                    <div class="form-step-header">
+                                        <span class="form-step-number">3</span>
+                                        <h3>{qp['form']['property_details']}</h3>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group">
@@ -1209,12 +1230,12 @@ def generate_quote_page(lang):
                                     </div>
                                 </div>
 
-                                <!-- Contact Details -->
+                                <!-- Step 4: Contact Details -->
                                 <div class="form-section">
-                                    <h3 class="form-section-title">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                                        {qp['form']['contact_details']}
-                                    </h3>
+                                    <div class="form-step-header">
+                                        <span class="form-step-number">4</span>
+                                        <h3>{qp['form']['contact_details']}</h3>
+                                    </div>
                                     <div class="form-row">
                                         <div class="form-group">
                                             <label for="name">{qp['form']['name']}</label>
@@ -2469,6 +2490,132 @@ h4 { font-size: 1.125rem; }
     color: var(--primary);
 }
 
+/* Step-based form headers */
+.form-step-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.form-step-header h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0;
+}
+
+.form-step-number {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.875rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+/* Service Type Cards */
+.service-type-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.service-type-card {
+    cursor: pointer;
+}
+
+.service-type-card input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.service-type-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    background: white;
+    transition: all var(--transition);
+}
+
+.service-type-card:hover .service-type-content {
+    border-color: var(--primary);
+    background: rgba(22, 163, 74, 0.02);
+}
+
+.service-type-card input:checked + .service-type-content {
+    border-color: var(--primary);
+    background: rgba(22, 163, 74, 0.05);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+.service-type-content svg {
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+}
+
+.service-type-title {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.service-type-desc {
+    font-size: 0.8125rem;
+    color: var(--text-light);
+}
+
+/* Frequency Options */
+.frequency-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+}
+
+.frequency-option {
+    cursor: pointer;
+}
+
+.frequency-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.frequency-label {
+    display: inline-block;
+    padding: 0.625rem 1.125rem;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    background: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text);
+    transition: all var(--transition);
+}
+
+.frequency-option:hover .frequency-label {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.frequency-option input:checked + .frequency-label {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
 .form-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -2718,6 +2865,19 @@ h4 { font-size: 1.125rem; }
 
     .form-row {
         grid-template-columns: 1fr;
+    }
+
+    .service-type-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .frequency-options {
+        gap: 0.5rem;
+    }
+
+    .frequency-label {
+        padding: 0.5rem 0.875rem;
+        font-size: 0.8125rem;
     }
 
     .quote-info-column {
