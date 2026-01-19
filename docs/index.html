@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lidice's Cleaning Services - Eco-friendly professional cleaning in Stockholm. 100% green products.">
+    <title>Lidice's Cleaning Services | Stockholm</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+        }
+
+        .landing-container {
+            text-align: center;
+            padding: 3rem 2rem;
+            max-width: 500px;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            color: #6b7280;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .green-note {
+            color: #15803d;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 2.5rem;
+        }
+
+        .lang-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .lang-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            min-width: 140px;
+        }
+
+        .lang-btn-en {
+            background: #16a34a;
+            color: white;
+        }
+
+        .lang-btn-en:hover {
+            background: #15803d;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(22, 163, 74, 0.3);
+        }
+
+        .lang-btn-sv {
+            background: white;
+            color: #1f2937;
+            border: 2px solid #e5e7eb;
+        }
+
+        .lang-btn-sv:hover {
+            border-color: #16a34a;
+            color: #16a34a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-container">
+        <h1>Lidice's Cleaning Services</h1>
+        <p class="tagline">Professional Cleaning in Stockholm</p>
+        <p class="green-note">100% Eco-Friendly Products</p>
+
+        <div class="lang-buttons">
+            <a href="en/index.html" class="lang-btn lang-btn-en">English</a>
+            <a href="sv/index.html" class="lang-btn lang-btn-sv">Svenska</a>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            var savedLang = localStorage.getItem('lidice-lang');
+            if (savedLang) {
+                window.location.href = savedLang + '/index.html';
+            }
+        })();
+    </script>
+</body>
+</html>

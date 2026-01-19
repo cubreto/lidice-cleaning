@@ -1,0 +1,8 @@
+# Lidice's Cleaning Services - Static Site Generator
+# No external dependencies required for basic generation
+# The generator uses only Python standard library
+
+# Optional dependencies for development:
+# pillow>=9.0.0        # Image optimization
+# cssmin>=0.2.0        # CSS minification
+# htmlmin>=0.1.12      # HTML minification

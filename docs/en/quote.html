@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eco-friendly professional cleaning services in Stockholm. 100% green products. Residential and school cleaning.">
+    <meta name="keywords" content="eco-friendly cleaning, green cleaning, Stockholm, hemstadning, skolstadning, miljovanlig stadning">
+    <title>Get a Free Quote | Lidice's Cleaning Services</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Get a Free Quote | Lidice's Cleaning Services">
+    <meta property="og:description" content="Eco-friendly professional cleaning services in Stockholm using 100% green products.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Lidice's Cleaning</span>
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html" class="">Home</a></li>
+                    <li><a href="services.html" class="">Services</a></li>
+                    <li><a href="quote.html" class="active">Get Quote</a></li>
+                    <li><a href="about.html" class="">About Us</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="../sv/offert.html" class="lang-switch" title="Svenska">
+                        SV
+                    </a>
+                    <a href="quote.html" class="btn btn-primary btn-sm">Get Quote</a>
+                    <button class="mobile-menu-btn" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="quote.html">Get Quote</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="../sv/offert.html">Svenska</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Get a Free Quote</h1>
+                <p>Fill out the form below and we will respond within 24 hours</p>
+            </div>
+        </section>
+
+        <!-- Quote Form -->
+        <section class="section">
+            <div class="container">
+                <div class="form-container">
+                    <form id="quote-form" action="https://formspree.io/f/xyzgkqwp" method="POST">
+                        <input type="hidden" name="_language" value="en">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="service">Service Type</label>
+                                <select id="service" name="service" required>
+                                    <option value="">--</option>
+                                    <option value="Residential - Regular Cleaning">Residential - Regular Cleaning</option><option value="Residential - Deep Cleaning">Residential - Deep Cleaning</option><option value="Residential - Move-In/Move-Out">Residential - Move-In/Move-Out</option><option value="Residential - Window Cleaning">Residential - Window Cleaning</option><option value="School - Kindergarten">School - Kindergarten</option><option value="School - Primary School">School - Primary School</option><option value="School - Secondary School">School - Secondary School</option><option value="School - Deep Sanitization">School - Deep Sanitization</option><option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="frequency">Cleaning Frequency</label>
+                                <select id="frequency" name="frequency" required>
+                                    <option value="">--</option>
+                                    <option value="One-time">One-time</option><option value="Weekly">Weekly</option><option value="Bi-weekly">Bi-weekly</option><option value="Monthly">Monthly</option><option value="Custom schedule">Custom schedule</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="size">Property Size (approx. sqm)</label>
+                                <input type="text" id="size" name="size" placeholder="e.g., 80">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address">Property Address</label>
+                                <input type="text" id="address" name="address" placeholder="Stockholm">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Additional Information</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about any special requirements or questions..."></textarea>
+                        </div>
+
+                        <p class="form-privacy">We respect your privacy. Your information will only be used to respond to your inquiry.</p>
+
+                        <button type="submit" class="btn btn-primary btn-lg btn-full">Send Request</button>
+                    </form>
+
+                    <div id="form-success" class="form-message success" style="display: none;">
+                        Thank you. We will contact you within 24 hours.
+                    </div>
+
+                    <div id="form-error" class="form-message error" style="display: none;">
+                        Something went wrong. Please try again or contact us directly.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Info -->
+        <section class="section section-alt">
+            <div class="container">
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <h3>Phone</h3>
+                        <a href="tel:+46 73 534 4533">+46 73 534 4533</a>
+                    </div>
+                    <div class="contact-card">
+                        <h3>Email</h3>
+                        <a href="mailto:lidice.cleaning@gmail.com">lidice.cleaning@gmail.com</a>
+                    </div>
+                    <div class="contact-card">
+                        <h3>Business Hours</h3>
+                        <p>Mon-Fri 7:00-18:00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-text">Lidice's Cleaning</span>
+                    </a>
+                    <p>Eco-Friendly Professional Cleaning in Stockholm</p>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="tel:+46 73 534 4533">+46 73 534 4533</a></li>
+                        <li><a href="mailto:lidice.cleaning@gmail.com">lidice.cleaning@gmail.com</a></li>
+                        <li>Stockholm, Sweden</li>
+                    </ul>
+                </div>
+
+                <div class="footer-hours">
+                    <h4>Business Hours</h4>
+                    <p>Mon-Fri 7:00-18:00</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="quote.html">Get Quote</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Lidice's Cleaning Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
