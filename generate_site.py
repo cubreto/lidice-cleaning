@@ -144,6 +144,28 @@ CONTENT = {
             ]
         },
 
+        'trust_badges': {
+            'title': "Why Choose Us",
+            'badges': [
+                {'title': "Licensed & Insured", 'desc': "Fully licensed business with comprehensive liability insurance for your peace of mind."},
+                {'title': "Trained Professionals", 'desc': "Our team is trained in eco-friendly cleaning techniques and safety protocols."},
+                {'title': "Satisfaction Guaranteed", 'desc': "Not happy? We will re-clean at no extra charge. Your satisfaction is our priority."},
+                {'title': "Flexible Scheduling", 'desc': "Book at times that work for you. We accommodate your schedule, not the other way around."}
+            ]
+        },
+
+        'faq': {
+            'title': "Frequently Asked Questions",
+            'items': [
+                {'q': "What cleaning products do you use?", 'a': "We exclusively use Nordic Swan Ecolabel and EU Ecolabel certified products. All our cleaning solutions are non-toxic, biodegradable, and safe for children and pets."},
+                {'q': "How do I get a quote?", 'a': "Fill out our online form or call us directly. We will discuss your needs and provide a free, no-obligation quote within 24 hours."},
+                {'q': "Do you bring your own equipment?", 'a': "Yes, we bring all necessary cleaning equipment and eco-friendly products. You do not need to provide anything."},
+                {'q': "What areas in Stockholm do you serve?", 'a': "We serve all of greater Stockholm including Sodermalm, Ostermalm, Kungsholmen, Vasastan, Norrmalm, Sundbyberg, Solna, Nacka, and Lidingo."},
+                {'q': "Can I request the same cleaner each time?", 'a': "Yes, we prioritize consistency. Once you are matched with a cleaner you like, we do our best to send the same person for all your appointments."},
+                {'q': "What is your cancellation policy?", 'a': "We ask for 24 hours notice for cancellations or rescheduling. This helps us maintain efficient scheduling for all our clients."}
+            ]
+        },
+
         'cta_section': {
             'title': "Ready for a Cleaner, Greener Space?",
             'subtitle': "Get your free, no-obligation quote today",
@@ -400,6 +422,28 @@ CONTENT = {
             ]
         },
 
+        'trust_badges': {
+            'title': "Varfor Valja Oss",
+            'badges': [
+                {'title': "Licensierad & Forsakrad", 'desc': "Fullt licensierat foretag med omfattande ansvarsforsakring for din trygghet."},
+                {'title': "Utbildade Proffs", 'desc': "Vart team ar utbildat i miljovanliga stadtekniker och sakerhetsprotokoll."},
+                {'title': "Nojdhetsgaranti", 'desc': "Inte nojd? Vi stadar om utan extra kostnad. Din tillfredsstallelse ar var prioritet."},
+                {'title': "Flexibel Bokning", 'desc': "Boka tider som passar dig. Vi anpassar oss efter ditt schema, inte tvartom."}
+            ]
+        },
+
+        'faq': {
+            'title': "Vanliga Fragor",
+            'items': [
+                {'q': "Vilka stadprodukter anvander ni?", 'a': "Vi anvander uteslutande Svanen och EU Ecolabel-certifierade produkter. Alla vara stadlosningar ar giftfria, biologiskt nedbrytbara och sakra for barn och husdjur."},
+                {'q': "Hur far jag en offert?", 'a': "Fyll i vart onlineformular eller ring oss direkt. Vi diskuterar dina behov och ger en kostnadsfri offert inom 24 timmar."},
+                {'q': "Tar ni med egen utrustning?", 'a': "Ja, vi tar med all nodvandig stadutrustning och miljovanliga produkter. Du behover inte tillhandahalla nagot."},
+                {'q': "Vilka omraden i Stockholm betjanar ni?", 'a': "Vi betjanar hela Storstockholm inklusive Sodermalm, Ostermalm, Kungsholmen, Vasastan, Norrmalm, Sundbyberg, Solna, Nacka och Lidingo."},
+                {'q': "Kan jag begar samma stadare varje gang?", 'a': "Ja, vi prioriterar kontinuitet. Nar du matchats med en stadare du gillar gor vi vart basta for att skicka samma person till alla dina bokningar."},
+                {'q': "Vad ar er avbokningspolicy?", 'a': "Vi ber om 24 timmars varsel for avbokningar eller ombokningar. Detta hjalper oss att uppratthalla effektiv schemaplanering for alla vara kunder."}
+            ]
+        },
+
         'cta_section': {
             'title': "Redo for ett Renare, Gronare Utrymme?",
             'subtitle': "Fa din kostnadsfria offert idag",
@@ -589,6 +633,30 @@ def get_base_template(lang, title, content, active_page='home'):
 
     <!-- Styles -->
     <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+    {{
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Lidice's Cleaning Services",
+        "description": "Eco-friendly professional cleaning services in Stockholm using 100% green products.",
+        "url": "https://cubreto.github.io/lidice-cleaning/",
+        "telephone": "{CONTACT_INFO['phone']}",
+        "email": "{CONTACT_INFO['email']}",
+        "address": {{
+            "@type": "PostalAddress",
+            "addressLocality": "Stockholm",
+            "addressCountry": "SE"
+        }},
+        "openingHours": "Mo-Fr 07:00-18:00",
+        "priceRange": "$$",
+        "serviceArea": {{
+            "@type": "City",
+            "name": "Stockholm"
+        }}
+    }}
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -729,6 +797,29 @@ def generate_home_page(lang):
                 <p>{p['desc']}</p>
             </div>'''
 
+    # Trust badges HTML
+    trust_badges_html = ''
+    for b in c['trust_badges']['badges']:
+        trust_badges_html += f'''
+            <div class="trust-badge">
+                <h3>{b['title']}</h3>
+                <p>{b['desc']}</p>
+            </div>'''
+
+    # FAQ HTML
+    faq_html = ''
+    for i, item in enumerate(c['faq']['items']):
+        faq_html += f'''
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-{i}">
+                    <span>{item['q']}</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer" id="faq-{i}">
+                    <p>{item['a']}</p>
+                </div>
+            </div>'''
+
     content = f'''
         <!-- Hero Section -->
         <section class="hero">
@@ -801,6 +892,26 @@ def generate_home_page(lang):
                 <h2 class="section-title">{c['testimonials']['title']}</h2>
                 <div class="testimonials-grid">
                     {testimonials_html}
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Badges -->
+        <section class="section section-alt trust-section">
+            <div class="container">
+                <h2 class="section-title">{c['trust_badges']['title']}</h2>
+                <div class="trust-grid">
+                    {trust_badges_html}
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section faq-section">
+            <div class="container">
+                <h2 class="section-title">{c['faq']['title']}</h2>
+                <div class="faq-container">
+                    {faq_html}
                 </div>
             </div>
         </section>
@@ -1856,6 +1967,115 @@ h4 { font-size: 1.125rem; }
 }
 
 /* =============================================================================
+   Trust Badges
+   ============================================================================= */
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.trust-badge {
+    text-align: center;
+    padding: 1.5rem 1rem;
+}
+
+.trust-badge h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.trust-badge p {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+@media (max-width: 992px) {
+    .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .trust-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =============================================================================
+   FAQ Section
+   ============================================================================= */
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    transition: color var(--transition);
+}
+
+.faq-question:hover {
+    color: var(--primary);
+}
+
+.faq-question span:first-child {
+    flex: 1;
+    padding-right: 1rem;
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--primary);
+    transition: transform var(--transition);
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+    padding-bottom: 1.25rem;
+}
+
+.faq-answer p {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* =============================================================================
    CTA Section
    ============================================================================= */
 
@@ -2320,6 +2540,27 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // FAQ Accordion
+    var faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(function(question) {
+        question.addEventListener('click', function() {
+            var faqItem = this.parentElement;
+            var isActive = faqItem.classList.contains('active');
+
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(function(item) {
+                item.classList.remove('active');
+                item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            });
+
+            // Open clicked item if it was not active
+            if (!isActive) {
+                faqItem.classList.add('active');
+                this.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
 });
 '''
 
@@ -2378,6 +2619,69 @@ def main():
 
     # Create placeholder for images
     (OUTPUT_DIR / 'images' / '.gitkeep').write_text('', encoding='utf-8')
+
+    # Generate sitemap.xml
+    base_url = "https://cubreto.github.io/lidice-cleaning"
+    today = datetime.now().strftime('%Y-%m-%d')
+    sitemap = f'''<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>{base_url}/</loc>
+        <lastmod>{today}</lastmod>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>{base_url}/en/index.html</loc>
+        <lastmod>{today}</lastmod>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>{base_url}/en/services.html</loc>
+        <lastmod>{today}</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>{base_url}/en/quote.html</loc>
+        <lastmod>{today}</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>{base_url}/en/about.html</loc>
+        <lastmod>{today}</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>{base_url}/sv/index.html</loc>
+        <lastmod>{today}</lastmod>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>{base_url}/sv/tjanster.html</loc>
+        <lastmod>{today}</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>{base_url}/sv/offert.html</loc>
+        <lastmod>{today}</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>{base_url}/sv/om-oss.html</loc>
+        <lastmod>{today}</lastmod>
+        <priority>0.7</priority>
+    </url>
+</urlset>'''
+    (OUTPUT_DIR / 'sitemap.xml').write_text(sitemap, encoding='utf-8')
+    print("  Generated sitemap.xml")
+
+    # Generate robots.txt
+    robots = f'''User-agent: *
+Allow: /
+
+Sitemap: {base_url}/sitemap.xml
+'''
+    (OUTPUT_DIR / 'robots.txt').write_text(robots, encoding='utf-8')
+    print("  Generated robots.txt")
 
     print("\nWebsite generated successfully.")
     print(f"\nOutput directory: {OUTPUT_DIR.absolute()}")
