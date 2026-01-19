@@ -80,6 +80,7 @@ CONTENT = {
 
         'services_overview': {
             'title': "Our Services",
+            'learn_more': "Learn more",
             'residential': {
                 'title': "Residential Cleaning",
                 'desc': "Keep your home spotless with our professional cleaning services using only eco-friendly, non-toxic products."
@@ -358,6 +359,7 @@ CONTENT = {
 
         'services_overview': {
             'title': "Vara Tjanster",
+            'learn_more': "Las mer",
             'residential': {
                 'title': "Hemstadning",
                 'desc': "Hall ditt hem skinande rent med vara professionella stadtjanster som endast anvander miljovanliga, giftfria produkter."
@@ -626,6 +628,9 @@ def get_base_template(lang, title, content, active_page='home'):
     <meta property="og:description" content="Eco-friendly professional cleaning services in Stockholm using 100% green products.">
     <meta property="og:type" content="website">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -747,6 +752,13 @@ def get_base_template(lang, title, content, active_page='home'):
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
     <script src="../js/main.js"></script>
 </body>
 </html>'''
@@ -852,12 +864,12 @@ def generate_home_page(lang):
                     <a href="{c['pages']['services']}" class="service-card">
                         <h3>{c['services_overview']['residential']['title']}</h3>
                         <p>{c['services_overview']['residential']['desc']}</p>
-                        <span class="card-link">Learn more</span>
+                        <span class="card-link">{c['services_overview']['learn_more']}</span>
                     </a>
                     <a href="{c['pages']['services']}" class="service-card">
                         <h3>{c['services_overview']['school']['title']}</h3>
                         <p>{c['services_overview']['school']['desc']}</p>
-                        <span class="card-link">Learn more</span>
+                        <span class="card-link">{c['services_overview']['learn_more']}</span>
                     </a>
                 </div>
             </div>
@@ -1222,6 +1234,8 @@ def generate_landing_page():
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Lidice's Cleaning Services - Eco-friendly professional cleaning in Stockholm. 100% green products.">
     <title>Lidice's Cleaning Services | Stockholm</title>
+
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2431,6 +2445,51 @@ h4 { font-size: 1.125rem; }
         text-align: center;
     }
 }
+
+/* =============================================================================
+   Back to Top Button
+   ============================================================================= */
+
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition);
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+    z-index: 100;
+}
+
+.back-to-top:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(22, 163, 74, 0.4);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 44px;
+        height: 44px;
+    }
+}
 '''
 
 
@@ -2561,6 +2620,25 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Back to Top Button
+    var backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
 '''
 
@@ -2619,6 +2697,14 @@ def main():
 
     # Create placeholder for images
     (OUTPUT_DIR / 'images' / '.gitkeep').write_text('', encoding='utf-8')
+
+    # Generate favicon (leaf icon)
+    favicon_svg = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <circle cx="16" cy="16" r="16" fill="#16a34a"/>
+  <path d="M16 6c-5.5 0-10 4.5-10 10 0 4.5 3 8.3 7 9.5 0-2.5.5-5 2-7-1.5 1-3 3-3 5.5.5.2 1 .3 1.5.4 0-3.5 2.5-6.5 5.5-8-.5 2-1 4.5-1 7 0 .5 0 1 .1 1.5h1.8c.1-.5.1-1 .1-1.5 0-2.5-.5-5-1-7 3 1.5 5.5 4.5 5.5 8 .5-.1 1-.2 1.5-.4 0-2.5-1.5-4.5-3-5.5 1.5 2 2 4.5 2 7 4-1.2 7-5 7-9.5 0-5.5-4.5-10-10-10z" fill="white"/>
+</svg>'''
+    (OUTPUT_DIR / 'images' / 'favicon.svg').write_text(favicon_svg, encoding='utf-8')
+    print("  Generated favicon")
 
     # Generate sitemap.xml
     base_url = "https://cubreto.github.io/lidice-cleaning"
